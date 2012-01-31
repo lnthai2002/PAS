@@ -1,0 +1,11 @@
+<h1>Steps to make <%=@recipe.name%></h1>
+
+<table>
+<% @steps.each do |step| %>
+  <tr>
+    <th><%=step.sequence_number%></th>
+    <td><%=step.description%></td>
+    <td><%= link_to 'Edit', edit_recipe_step_path(@recipe, step) %> | <%= link_to 'Destroy', [@recipe, step], confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>

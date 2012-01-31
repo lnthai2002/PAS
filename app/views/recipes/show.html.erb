@@ -1,0 +1,44 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	$(function() {
+		$(".sortable_list").sortable({ opacity: 0.6, cursor: 'move', update: function() {
+			var order = $(this).sortable("serialize") + '&recipe_id=' + $('#recipe_id').val();
+			$.put("/steps/update_sequences", order, null, null);
+		}
+		});
+	});
+
+});
+</script>
+
+<h1>Recipe for <%=@recipe.name%></h1>
+<p id="notice"><%= notice %></p>
+<%= link_to 'List', recipes_path %>
+<hr />
+
+<table>
+	<tr>
+		<td><%= render 'steps/form' %></td>
+		<td><%= render 'ingredients/form' %></td>
+	</tr>
+	<tr>
+		<td>
+			<ul id='steps' class="sortable_list">
+				<% @recipe.steps.each do |step| %>
+					<%if step.sequence_number%>
+						<li id="recordid_<%=step.id%>"><%= link_to 'Edit', edit_recipe_step_path(@recipe, step) %> | <%= link_to 'Destroy', [@recipe, step], confirm: 'Are you sure?', method: :delete %> <%=step.sequence_number%> <%=step.description%></li>
+					<%end%>
+				<% end %>
+			</ul>
+		</td>
+		<td>
+			<ul id='ingredients'>
+				<% @recipe.ingredients.each do |ingredient| %>
+					<%if ingredient.name%>
+						<li><%= link_to 'Remove', {:controller=>:ingredients, :action=>:destroy, :id=>ingredient.id, :recipe_id=>@recipe.id}, {method: :delete} %> <%=ingredient.name%></li>
+					<%end%>
+				<% end %>
+			</ul>
+		</td>
+	</tr>
+</table>

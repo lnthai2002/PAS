@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'List', songs_path %> | <%= link_to 'Edit', edit_song_path(@song) %>
+
+<hr />
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Artist</th>
+    <th>Album</th>
+    <th>Genre</th>
+    <th>&nbsp;</th>
+  </tr>
+  <tr>
+    <td><%=@song.title%></td>
+    <td><%=@song.artist%></td>
+    <td><%=@song.album%></td>
+    <td><%=@song.genre%></td>
+    <td><%= link_to "Download", {:controller=>'songs', :action=>'download', :id=>"#{@song.id}#{File.extname(@song.location)}"}, {:class=>'media'}%></td>
+  </tr>
+</table>
