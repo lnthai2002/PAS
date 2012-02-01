@@ -1,13 +1,14 @@
 set :application, "PAS"
-set :repository,  "set your repository location here"
+default_run_options[:pty] = true  # Must be set for the password prompt from git to work
+set :repository, "git@github.com:lnthai2002/PAS.git"
+set :scm, "git"
+#set :user, "deployer"  # The server's user for deploys
+#set :scm_passphrase, "p@ssw0rd"  # The deploy user's password
+set :deploy_to, "/var/www/PAS"
 
-set :scm, :subversion
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-
-role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-role :app, "your app-server here"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
+role :web, "darkportal.no-ip.info"                          # Your HTTP server, Apache/etc
+role :app, "darkportal.no-ip.info"                          # This may be the same as your `Web` server
+role :db,  "darkportal.no-ip.info", :primary => true # This is where Rails migrations will run
 
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
@@ -20,3 +21,11 @@ role :db,  "your slave db-server here"
 #     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
 #   end
 # end
+
+namespace :deploy do
+  task :copy_database_configuration do
+    production_db_config = "/home/nhut_le/production.database.yml"
+    run "cp #{production_db_config} #{release_path}/config/database.yml"
+  end
+  after "deploy:update_code" , "deploy:copy_database_configuration"
+end
