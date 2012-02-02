@@ -7,9 +7,9 @@ set :rvm_type, :user
 require "bundler/capistrano"
 
 #declare multi-stage deployment
+require 'capistrano/ext/multistage'
 set :stages, %w(production uat)
 set :default_stage, "uat"
-require 'capistrano/ext/multistage'
 
 set :application, "pas"
 
