@@ -4,6 +4,8 @@ require "rvm/capistrano"
 set :rvm_ruby_string, '1.9.2-p290@pas'
 set :rvm_type, :user
 
+require "bundler/capistrano"
+
 #declare multi-stage deployment
 set :stages, %w(production uat)
 set :default_stage, "uat"
@@ -78,8 +80,7 @@ namespace :deploy do
 
   desc "Overwrite database.yml with the protected file on prod machine"
   task :copy_database_configuration do
-    production_db_config = "/home/nhut_le/production.database.yml"
-    run "cp #{production_db_config} #{release_path}/config/database.yml"
+    run "cp #{db_config_loc} #{release_path}/config/database.yml"
   end
   after "deploy:update_code" , "deploy:copy_database_configuration"
 
