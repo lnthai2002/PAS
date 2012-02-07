@@ -1,24 +1,11 @@
-=begin
 #declaration to use with user based RVM, rails 1.9.2, gemset pas
 $:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
 require "rvm/capistrano"
 set :rvm_ruby_string, '1.9.2-p290@pas'
 set :rvm_type, :user
-=end
-
-# Add RVM's lib directory to the load path.
-$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-
-# Load RVM's capistrano plugin.    
-require "rvm/capistrano"
-
-set :rvm_ruby_string, '1.9.2'
-set :rvm_type, :user  # Don't use system-wide RVM
-
-
 
 #install gems when deploy 
-#require "bundler/capistrano"
+require "bundler/capistrano"
 
 #declare multi-stage deployment
 require 'capistrano/ext/multistage'
@@ -44,7 +31,7 @@ set(:current_revision)  { capture("cd #{current_path}; git rev-parse --short HEA
 set(:latest_revision)   { capture("cd #{current_path}; git rev-parse --short HEAD").strip }
 set(:previous_revision) { capture("cd #{current_path}; git rev-parse --short HEAD@{1}").strip }
 
-default_run_options[:shell] = 'bash'
+#default_run_options[:shell] = 'bash'
 
 namespace :deploy do
   desc "Deploy and restart"
