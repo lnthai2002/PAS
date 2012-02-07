@@ -5,7 +5,7 @@ set :rvm_ruby_string, '1.9.2-p290@pas'
 set :rvm_type, :user
 
 #install gems when deploy 
-require "bundler/capistrano"
+#require "bundler/capistrano" #not recommend use this because development and deployment on different platform(32b,64b) may cause problem installing gem due to missing ARCHFLAGS=
 
 #declare multi-stage deployment
 require 'capistrano/ext/multistage'
