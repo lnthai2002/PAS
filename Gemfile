@@ -37,7 +37,6 @@ group :test do
   gem 'turn', '0.8.2', :require => false
 end
 
-gem 'libv8', '~> 3.3.10.4'
 gem 'will_paginate'
 gem 'calendar_date_select'
 gem 'hash_extension'
