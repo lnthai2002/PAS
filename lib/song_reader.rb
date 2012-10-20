@@ -1,30 +1,43 @@
-require "mp3info"
+#require "mp3info"
+require 'taglib'
 class SongReader
-  def read_file(file)
-    # read and display infos & tags
-    Mp3Info.open(file, :encoding => 'utf-8') do |mp3info|
-      puts mp3info
-      puts '----------tag-------'
-      puts mp3info.tag
-      puts '++++++++++tag1++++++'
-      puts mp3info.tag1
-      puts '++++++++++tag2++++++'
-      puts mp3info.tag2
-      return mp3info.tag
+  def read_generic_file(file)
+    TagLib::FileRef.open(file) do |fileref|
+      tag = fileref.tag
+    
+      # Read basic attributes
+      puts 'title: ' + tag.title.to_s   #=> "Wake Up"
+      puts 'artist: ' + tag.artist.to_s  #=> "Arcade Fire"
+      puts 'albulm: ' + tag.album.to_s   #=> "Funeral"
+      puts 'year: ' + tag.year.to_s    #=> 2004
+      puts 'track ' + tag.track.to_s   #=> 7
+      puts 'genre ' + tag.genre.to_s   #=> "Indie Rock"
+      puts 'comment ' +tag.comment.to_s #=> nil
+    
+      properties = fileref.audio_properties
+      puts 'prop.length ' + properties.length.to_s  #=> 335 (song length in seconds)
     end
-=begin
-    # read/write tag1 and tag2 with Mp3Info#tag attribute
-    # when reading tag2 have priority over tag1
-    # when writing, each tag is written.
-    Mp3Info.open(file, :encoding => 'utf-8') do |mp3|
-      puts mp3.tag.title   
-      puts mp3.tag.artist   
-      puts mp3.tag.album
-      puts mp3.tag.tracknum
-      mp3.tag.title = "track title"
-      mp3.tag.artist = "artist name"
+  end
+  
+  def read_mp3_file(file)
+    tags = {}
+    TagLib::MPEG::File.open(file) do |fh|
+      tag = fh.id3v2_tag
+      tags = {:title  => tag.title,
+              :artist => tag.artist,
+              :albulm => tag.album,
+              :year   => tag.year,
+              :track  => tag.track,
+              :genre  => tag.genre,
+              :comment=> tag.comment}
+    
+      # Attached picture frame
+      cover = tag.frame_list('APIC').first
+      if cover
+        tags[:apic] = {:mime_type=>cover.mime_type, :pic=>cover.picture}
+      end
     end
-=end
+    return tags
   end
   
   def write_tags(file, tags)
