@@ -1,0 +1,24 @@
+!!! 5
+
+%html
+  %head
+    %title P.A.S
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+%body
+  .navigation
+    %fieldset
+      %legend
+        %span.menuTitle Services
+      = tabs_tag do |tab|
+        = tab.financial 'Financial', expenses_path
+        = tab.music 'Music', songs_path
+        = tab.cooking 'Cooking', recipes_path
+
+  .gap
+
+  .content
+    =render :partial=>'menu'
+    = yield
