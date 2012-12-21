@@ -1,4 +1,5 @@
 class ExpensesController < ApplicationController
+  set_tab :financial
   # GET /expenses
   # GET /expenses.json
   def index

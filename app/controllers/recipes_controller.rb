@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  set_tab :cooking
   # GET /recipes
   # GET /recipes.json
   def index

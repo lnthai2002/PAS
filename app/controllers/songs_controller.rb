@@ -1,5 +1,6 @@
 require 'tag_info.rb'
 class SongsController < ApplicationController
+  set_tab :music
   # GET /songs
   # GET /songs.json
   def index
