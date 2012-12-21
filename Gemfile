@@ -16,6 +16,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'haml'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
@@ -28,6 +29,7 @@ group :development do
 # Deploy with Capistrano
  gem 'capistrano'
  gem 'capistrano-ext'
+ gem 'debugger'
 end
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
@@ -45,3 +47,4 @@ gem 'therubyracer'
 gem 'rmagick'
 gem 'devise'
 gem 'ruby-mp3info'
+gem 'tabs_on_rails'
