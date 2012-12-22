@@ -1,12 +1,26 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
-
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
-#gem 'sqlite3'
 gem 'mysql2'
+gem 'devise'
+
+#Javascript lib
+gem 'execjs'
+#gem 'therubyracer' #cause error when installing on ubuntu
+gem 'jquery-rails'
+
+#Visual
+gem 'will_paginate'
+gem 'calendar_date_select'
+gem 'tabs_on_rails'
+
+#Convenent coding
+gem 'haml'
+gem 'hash_extension'
+
+#interface to OS packages
+gem 'rmagick'
+gem 'ruby-mp3info'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -16,35 +30,14 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'haml'
-gem 'jquery-rails'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
 group :development do
 # Deploy with Capistrano
  gem 'capistrano'
  gem 'capistrano-ext'
  gem 'debugger'
 end
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
 end
-
-gem 'will_paginate'
-gem 'calendar_date_select'
-gem 'hash_extension'
-gem 'execjs'
-gem 'therubyracer'
-gem 'rmagick'
-gem 'devise'
-gem 'ruby-mp3info'
-gem 'tabs_on_rails'
