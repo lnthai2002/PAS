@@ -1,11 +1,8 @@
 #declaration to use with user based RVM, rails 1.9.2, gemset pas
-$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
+#$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
 require "rvm/capistrano"
-set :rvm_ruby_string, '1.9.2-p290@pas'
-set :rvm_type, :user
-
-#install gems when deploy 
-#require "bundler/capistrano" #not recommend use this because development and deployment on different platform(32b,64b) may cause problem installing gem due to missing ARCHFLAGS=
+require "bundler/capistrano" #not recommend use this because development and deployment on different platform(32b,64b) may cause problem installing gem due to missing ARCHFLAGS=
+#set :rvm_ruby_string, '1.9.3-p194@pas'
 
 #declare multi-stage deployment
 require 'capistrano/ext/multistage'
