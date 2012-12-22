@@ -31,6 +31,8 @@ set(:previous_revision) { capture("cd #{current_path}; git rev-parse --short HEA
 #default_run_options[:shell] = 'bash'
 
 namespace :deploy do
+  after "deploy:update_code", "deploy:compile_assets"
+
   desc "Deploy and restart"
   task :default do
     update
@@ -60,6 +62,11 @@ namespace :deploy do
   task :update_code, :except => { :no_release => true } do
     run "cd #{current_path}; git fetch origin; git reset --hard #{branch}"
     finalize_update
+  end
+  
+  desc "Compile assets"
+  task :compile_assets do
+    run "cd #{current_path}; bundle exec rake assets:precompile"
   end
   
   desc "Update the database (overwritten to avoid symlink)"
