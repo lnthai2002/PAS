@@ -1,5 +1,5 @@
 
-set :branch,     "origin/master"
+set :branch,     "origin/production"
 set :rails_env, 'production'
 
 #declare production servers
