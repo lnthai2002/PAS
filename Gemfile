@@ -1,44 +1,40 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+gem 'rails', '3.2.9'
 gem 'mysql2'
 gem 'devise'
 
 #Javascript lib
-gem 'execjs'
-#gem 'therubyracer' #cause error when installing on ubuntu
 gem 'jquery-rails'
 
 #Visual
-gem 'will_paginate'
-gem 'calendar_date_select'
-gem 'tabs_on_rails'
+gem 'will_paginate'                         #pagination
+gem 'calendar_date_select'                  #show calendar to user to select
+gem 'tabs_on_rails'                         #allow declaring tab for each controller
 
 #Convenent coding
-gem 'haml'
-gem 'hash_extension'
+gem 'haml'                                  #shorter syntax to code layout 
+gem 'hash_extension'                        #allow accessing hash like object: has.key in addition to hash[key]
 
 #interface to OS packages
-gem 'rmagick'
-gem 'ruby-mp3info'
+gem 'rmagick'                               #image manipulation: scale, crop, convert..
+gem 'ruby-mp3info'                          #read and write mp3 tag
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.1.5'
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>= 1.0.3'                #compress JS and CSS into smaller file
+  gem 'execjs'                              #ruby interface to JS
+  gem 'therubyracer', :platforms => :ruby   #one of many JS runtime
+  gem 'libv8'
 end
 
 group :development do
 # Deploy with Capistrano
  gem 'capistrano'
  gem 'capistrano-ext'
- gem 'rvm-capistrano'
+ gem 'rvm-capistrano'                       #support instructing capistrano to choose which ruby version from rvm
  gem 'debugger'
-end
-
-group :test do
-  # Pretty printed test output
-  gem 'turn', '0.8.2', :require => false
 end
