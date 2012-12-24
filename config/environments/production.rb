@@ -9,7 +9,7 @@ Pas::Application.configure do
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
@@ -20,6 +20,7 @@ Pas::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  config.assets.precompile += ["*.css", "*.js"]
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 
