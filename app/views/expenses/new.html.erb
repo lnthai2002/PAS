@@ -1,9 +1,26 @@
-<% form_for(@expense) do |f| %>
-  <%= f.error_messages %>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(function() {
+			$( ".datepicker" ).datepicker();
+		});
+	});
+</script>
+
+<%= form_for(@expense) do |f| %>
+  <% if @expense.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@expense.errors.count, "error") %> occurs:</h2>
+      <ul>
+      <% @expense.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <table>
   	<tr>
 		<th align="left"><%=f.label :Date%></th>
-		<td><%=f.calendar_date_select :exp_date, {:popup=>'force', :year_range=>[2.years.ago,3.years.from_now],:size=>15}%></td>
+		<td><%=f.text_field :exp_date, :class=>'datepicker', :size=>10%></td>
 	</tr>
 	<tr>
 		<th align="left">Type</th>
@@ -19,13 +36,13 @@
 	</tr>
 	<tr>
 		<th align="left">Note</th>
-		<td><%=f.text_area :note%></td>
+		<td><%=f.text_area :note, :cols => 25, :rows=>2%></td>
 	</tr>
 	<tr>
 		<td colspan='2'>&nbsp;</td>
 	</tr>
 	<tr>
-		<td colspan="2" align="right"><%= f.submit 'Create' %></td>
+		<td colspan="2" align="right"><%= f.submit 'Done' %></td>
 	</tr>
   </table>
 <% end %>

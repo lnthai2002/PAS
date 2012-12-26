@@ -1,4 +1,6 @@
 class StepsController < ApplicationController
+  set_tab :cooking
+
   before_filter :find_recipe
   before_filter :find_step, :only => [:show, :edit, :update, :destroy]
 =begin

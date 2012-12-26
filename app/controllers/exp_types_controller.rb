@@ -1,4 +1,5 @@
 class ExpTypesController < ApplicationController
+  set_tab :financial
   # GET /exp_types
   # GET /exp_types.json
   def index

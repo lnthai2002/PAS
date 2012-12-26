@@ -1,0 +1,46 @@
+= form_tag(:id=>'select_month') do
+  %table
+    %tr
+      %th
+        = date_select(@selected_month, :get, {:discard_day =>true, :include_blank=>false})
+        =# observe_field(:selected_month, :url=>url_for(:controller=>:expenses, :action=>:index, :year=>@year, :month=>@month), :on =>'change')
+
+%fieldset
+  %legend Previous month summary
+  %table
+    - @summaries.each_pair do |category,total|
+      %tr{:class=>cycle('even', 'odd')}
+        %th=ExpType.get_desc(category)
+        %td{:align=>'right'}= number_to_currency(total)
+
+%fieldset
+  %legend Curent month
+  %table{:width=>'90%'}
+    %thead
+      %tr{:class=>cycle('even', 'odd')}
+        %th Date
+        %th Exp Type
+        %th{:style=>"text-align:right;"} Amount
+        %th Method
+        %th Note
+        %th &nbsp;
+    %tfoot
+      %tr{:class=>cycle('even', 'odd')}
+        %th{:colspan=>'2'} TOTAL
+        %td{:align=>'right'}= number_to_currency(@monthly_total)
+    %tbody
+      - @expenses.each do |e|
+        %tr{:class=>cycle('even', 'odd')}
+          %td= e.exp_date
+          %td= e.exp_type.description
+          %td{:align=>'right'}= number_to_currency(e.amount)
+          %td{:align=>'center'}= e.payment_type.description
+          %td= e.note
+          %td
+            = link_to 'Show', e
+            |
+            = link_to 'Edit', edit_expense_path(e)
+            |
+            = link_to 'Break', :controller=>:expenses, :action=>:breakdown, :id=>e.id
+            |
+            = link_to 'Destroy', e, :confirm => 'Are you sure?', :method => :delete

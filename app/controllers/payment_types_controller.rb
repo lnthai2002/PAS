@@ -1,4 +1,5 @@
 class PaymentTypesController < ApplicationController
+  set_tab :financial
   # GET /payment_types
   # GET /payment_types.json
   def index

@@ -6,6 +6,7 @@ gem 'devise'
 
 #Javascript lib
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 #Visual
 gem 'will_paginate'                         #pagination

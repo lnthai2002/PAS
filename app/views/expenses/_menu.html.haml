@@ -1,0 +1,17 @@
+.actionMenu
+  %span.menuTitle
+    = decorate_menu('text'=>'List', 'path'=>exp_types_path)
+    |
+    = decorate_menu('text'=>'Add', 'path'=>new_exp_type_path)
+    << Expense types
+    %br
+    = decorate_menu('text'=>'List', 'path'=>payment_types_path)
+    |
+    = decorate_menu('text'=>'Add', 'path'=>new_payment_type_path)
+    << Payment types
+    %br
+    = decorate_menu('text'=>'List', 'path'=>expenses_path)
+    |
+    = decorate_menu('text'=>'Add', 'path'=>new_expense_path)
+    << Expenses
+%hr

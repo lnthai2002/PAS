@@ -1,4 +1,5 @@
 class IngredientsController < ApplicationController
+  set_tab :cooking
   def create
     if not params[:recipe_id].blank?
       create_and_forward_to_recipe

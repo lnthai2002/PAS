@@ -145,7 +145,7 @@ class ExpensesController < ApplicationController
 
 private
   def load_selections
-    @exp_types = ExpType.find_as_hashes(:all)
-    @payment_types = PaymentType.find_as_hashes(:all)
+    @exp_types = ExpType.all
+    @payment_types = PaymentType.all
   end
 end
