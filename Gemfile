@@ -19,7 +19,7 @@ gem 'hash_extension'                        #allow accessing hash like object: h
 gem 'carrierwave'                            #easy upload image to server
 
 #interface to OS packages
-gem 'rmagick'                               #image manipulation: scale, crop, convert..
+gem 'mini_magick'                           #image manipulation: scale, crop, convert..
 gem 'ruby-mp3info'                          #read and write mp3 tag
 
 # Gems used only for assets and not required
