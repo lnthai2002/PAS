@@ -14,6 +14,8 @@ $(document).ready(function(){
 <h2>Recipe for <%=@recipe.name%></h2>
 <p id="notice"><%= notice %></p>
 
+<div><%= image_tag @recipe.image_url(:medium).to_s%></div>
+
 <table>
 	<tr>
 		<td><%= render 'steps/form' %></td>

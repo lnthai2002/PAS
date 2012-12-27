@@ -1,10 +1,9 @@
 <fieldset id="newstep">
 	<legend>New step</legend>
-	<%= form_for [@recipe, @step] do |f| %>
+	<%= form_for [@recipe, @step], :html=>{:multipart=>true} do |f| %>
 		<% if @step.errors.any? %>
 			<div id="error_explanation">
 				<h2><%= pluralize(@step.errors.count, "error") %> prohibited this step from being saved:</h2>
-	
 				<ul>
 					<% @step.errors.full_messages.each do |msg| %>
 					<li><%= msg %></li>
@@ -16,6 +15,11 @@
 			<tr>
 				<th>Description</th>
 				<td rowspan="2"><%= f.text_area :description, :rows=>2%></td>
+			</tr>
+			<tr><td>&nbsp;</td></tr>
+			<tr>
+				<th>Image</th>
+				<td><%=f.file_field :image%></td>
 			</tr>
 			<tr><td>&nbsp;</td></tr>
 			<tr>
