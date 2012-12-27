@@ -8,3 +8,17 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function(){
+	//show and hide left menu----------------------------
+	//hide all sub-menu
+	$('.navigation fieldset').children('ul').find('ul').hide();
+	//show all sub-menu which is current
+	var submenus = $('.navigation fieldset').children('ul').find('ul') //find all submenus
+	$(submenus).each(function(){
+	  var current_submenu = $(this)
+	  if (current_submenu.prevAll('li').first().hasClass('current')){
+	  	current_submenu.show();
+	  }
+	})
+})
