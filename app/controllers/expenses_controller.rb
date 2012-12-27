@@ -1,5 +1,12 @@
 class ExpensesController < ApplicationController
+  #Service tab
   set_tab :financial
+  #Resource tab
+  set_tab :all, :expenses
+  #sub-tab, each sub-tab coresponse to one action, they belong to the namespace 'expense_actions'
+  set_tab :list, :expense_actions, :only => %w(index)
+  set_tab :add, :expense_actions, :only => %w(new)
+  
   # GET /expenses
   # GET /expenses.json
   def index

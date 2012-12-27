@@ -1,5 +1,11 @@
 class ExpTypesController < ApplicationController
+  #Service tab
   set_tab :financial
+  #resource tab
+  set_tab :all, :expense_types
+  #action tab, each action tab correspond to one action, they belong to the namespace 'expense_type_acrtions'
+  set_tab :list, :expense_type_actions, :only => %w(index)
+  set_tab :add, :expense_type_actions, :only => %w(new)
   # GET /exp_types
   # GET /exp_types.json
   def index

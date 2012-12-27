@@ -1,5 +1,12 @@
 class PaymentTypesController < ApplicationController
+  #Service tab
   set_tab :financial
+  #Resource tab: payment_type
+  set_tab :all, :payment_types
+  #Action tab, each action tab correspond to one action, they belong to the namespace 'payment_type_actions'
+  set_tab :list, :payment_type_actions, :only => %w(index)
+  set_tab :add, :payment_type_actions, :only => %w(new)
+
   # GET /payment_types
   # GET /payment_types.json
   def index

@@ -14,11 +14,33 @@
         %span.menuTitle Services
       = tabs_tag do |tab|
         = tab.financial 'Financial', expenses_path
+        = tabs_tag :namespace => :expense_types do |tab|
+          = tab.all 'Expense Types', exp_types_path
+          = tabs_tag :namespace => :expense_type_actions do |tab|
+            = tab.list 'List', exp_types_path
+            = tab.add 'Add', new_exp_type_path
+        
+        = tabs_tag :namespace => :payment_types do |tab|
+          = tab.all 'Payment Types', payment_types_path
+          = tabs_tag :namespace => :payment_type_actions do |tab|
+            = tab.list 'List', payment_types_path
+            = tab.add 'Add', new_payment_type_path
+        
+        = tabs_tag :namespace => :expenses do |tab|
+          = tab.all 'Expenses', expenses_path
+          = tabs_tag :namespace => :expense_actions do |tab|
+            = tab.list 'List', expenses_path
+            = tab.add 'Add', new_expense_path
+        
         = tab.music 'Music', songs_path
+        
         = tab.cooking 'Cooking', recipes_path
-
+        = tabs_tag :namespace => :recipes do |tab|
+          = tab.all 'Recipes', recipes_path
+          = tabs_tag :namespace => :recipe_actions do |tab|
+            = tab.list 'List', recipes_path
+            = tab.add 'Add', new_recipe_path
   .gap
 
   .content
-    =render :partial=>'menu'
     = yield
