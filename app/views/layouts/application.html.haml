@@ -40,11 +40,13 @@
           = tabs_tag :namespace => :recipe_actions do |tab|
             = tab.list 'List', recipes_path
             = tab.add 'Add', new_recipe_path
+            = tab.edit 'Edit', edit_recipe_path(@recipe) if (@recipe && !@recipe.new_record?)
+            = tab.show 'Detail', recipe_path(@recipe) if (@recipe && !@recipe.new_record?)
   .gap
 
   .content
     = yield
     
-    %hr
-    
-    %p Menu on right since only ~15% of people are left-handed (should i consider those other 75% jerking off right handed while holding the tablet left hand?)
+    #footnote
+      %hr
+      %p Menu on right since only ~15% of people are left-handed (should i consider those other 75% jerking off right handed while holding the tablet left hand?)
