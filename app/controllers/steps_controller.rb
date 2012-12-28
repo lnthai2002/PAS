@@ -52,7 +52,7 @@ class StepsController < ApplicationController
 
     respond_to do |format|
       if @step.save
-        format.html { redirect_to @recipe, notice: 'A step was successfully added.' }
+        format.html { redirect_to edit_recipe_path(@recipe), notice: 'A step was successfully added.' }
         format.json { render json: @step, status: :created, location: @step }
       else
         format.html { render action: "new" }

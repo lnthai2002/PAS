@@ -26,7 +26,7 @@ private
     end
 
     respond_to do |format|
-      format.html { redirect_to recipe }
+      format.html { redirect_to edit_recipe_path(recipe) }
       format.json { head :ok }
     end
   end
@@ -52,7 +52,7 @@ private
 
     respond_to do |format|
       if @ingredient.save
-        format.html { redirect_to recipe, notice: 'An ingredient was successfully added.' }
+        format.html { redirect_to edit_recipe_path(recipe), notice: 'An ingredient was successfully added.' }
         format.json { render json: @ingredient, status: :created, location: @ingredient }
       else
         format.html { render action: "new" }

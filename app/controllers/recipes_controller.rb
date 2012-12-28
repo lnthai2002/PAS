@@ -4,8 +4,10 @@ class RecipesController < ApplicationController
   #Resource tab
   set_tab :all, :recipes
   #sub-tab, each sub-tab coresponse to one action, they belong to the namespace 'recipe_actions'
-  set_tab :list, :recipe_actions, :only => %w(index)
   set_tab :add, :recipe_actions, :only => %w(new)
+  set_tab :edit, :recipe_actions, :only => %w(edit)
+  set_tab :list, :recipe_actions, :only => %w(index)
+  set_tab :show, :recipe_actions, :only => %w(show)
   # GET /recipes
   # GET /recipes.json
   def index
@@ -44,6 +46,8 @@ class RecipesController < ApplicationController
   # GET /recipes/1/edit
   def edit
     @recipe = Recipe.find(params[:id])
+    @step = @recipe.steps.build #build a new step, this new one does not have sequence_id YET
+    @ingredient = @recipe.ingredients.build #build new ingredient
   end
 
   # POST /recipes
@@ -53,7 +57,7 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
+        format.html { redirect_to edit_recipe_path(@recipe), notice: 'Recipe was successfully created.' }
         format.json { render json: @recipe, status: :created, location: @recipe }
       else
         format.html { render action: "new" }
@@ -69,7 +73,7 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.update_attributes(params[:recipe])
-        format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
+        format.html { redirect_to edit_recipe_path(@recipe), notice: 'Recipe was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

@@ -1,0 +1,20 @@
+%h2= "Recipe for #{@recipe.name}"
+
+= image_tag @recipe.image_url(:medium).to_s
+
+%table
+  %tr
+    %th Ingredients
+    %td
+      %ul
+        - @recipe.ingredients.each do |ingredient|
+          - if ingredient.name
+            %li
+              =ingredient.name
+  %tr
+    %th Steps
+    %td
+      %ol
+        - @recipe.steps.each do |step|
+          - if step.sequence_number
+            %li= step.description
