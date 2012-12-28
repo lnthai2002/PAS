@@ -1,0 +1,24 @@
+//positioning application layout's main div'
+body{
+  position:absolute;
+}
+div.navigation,.gap,.content{
+  float:right;
+  margin-right:10px; 
+}
+
+div.navigation{
+  .current {color:orange; font-weight:bold; font-style:italic;}
+  .menuTitle {font-weight:bold;}
+  a {font-style:italic;}  
+}
+
+div.content{
+  fieldset legend{color:orange; font-weight:bold}
+  #footnote{
+    float:bottom;
+    font-weight:lighter;
+    color:LightGray;
+  }
+} 
+

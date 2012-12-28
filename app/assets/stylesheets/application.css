@@ -6,16 +6,3 @@
  *= require_tree . 
  *= require vendor
 */
-
-div.navigation,.gap,.content{
-	float: right;
-	margin-right:10px; 
-}
-
-.navigation .current {color:orange; font-weight:bold; font-style:italic;}
-.navigation .menuTitle {font-weight:bold;}
-.navigation a {font-style:italic;}
-
-.actionMenu .current {color:orange; font-weight:bold; font-style:italic;}
-.actionMenu .menuTitle {font-weight:bold;}
-.actionMenu a {font-style:italic;}
