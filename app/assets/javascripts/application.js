@@ -10,7 +10,7 @@
 //= require_tree .
 
 $(document).ready(function(){
-	//show and hide left menu----------------------------
+	//show and hide right menu----------------------------
 	//hide all sub-menu
 	$('.navigation fieldset').children('ul').find('ul').hide();
 	//show all sub-menu which is current
@@ -21,4 +21,11 @@ $(document).ready(function(){
 	  	current_submenu.show();
 	  }
 	})
+	
+	//Show and hide recipe form on edit____________________
+	$(document).ready(function(){
+		$('#js_edit_recipe').click(function(e){
+			$('#js_recipe_form').toggle();
+		})
+	});
 })
