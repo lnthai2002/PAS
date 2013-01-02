@@ -1,7 +1,8 @@
-%table
-  -@recipes.each do |recipe|
-    %tr
-      %th= link_to recipe.name, recipe
-      %td= image_tag recipe.image_url(:thumb).to_s
-      %td= truncate(recipe.description, :length=>20)
-      %td= link_to image_tag('delete.png'), recipe, confirm: 'Are you sure?', method: :delete
+-@recipes.each do |recipe|
+  %div.recipe
+    = link_to recipe.name, recipe
+    %br
+    = link_to image_tag(recipe.image_url(:thumb).to_s), recipe
+    %br
+    = truncate(recipe.description, :length=>20)
+    = link_to image_tag('delete.png'), recipe, confirm: 'Are you sure?', method: :delete

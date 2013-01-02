@@ -20,5 +20,15 @@ div.content{
     font-weight:lighter;
     color:LightGray;
   }
+  div.recipe{
+    //float:left;
+    margin: 5px;
+    width: 140px;
+    length: 140px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+  }
 } 
 
