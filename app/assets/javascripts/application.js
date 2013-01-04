@@ -25,7 +25,7 @@ $(document).ready(function(){
 	//Show and hide recipe form on edit____________________
 	$(document).ready(function(){
 		$('#js_edit_recipe').click(function(e){
-			$('#js_recipe_form').toggle();
+			$('#js_recipe_form').slideToggle();
 		})
 	});
 })
