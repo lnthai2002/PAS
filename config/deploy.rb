@@ -2,6 +2,7 @@
 #$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
 require "rvm/capistrano"
 require "bundler/capistrano" #not recommend use this because development and deployment on different platform(32b,64b) may cause problem installing gem due to missing ARCHFLAGS=
+load "deploy/assets"
 #set :rvm_ruby_string, '1.9.3-p194@pas'
 
 #declare multi-stage deployment
@@ -31,7 +32,7 @@ set(:previous_revision) { capture("cd #{current_path}; git rev-parse --short HEA
 #default_run_options[:shell] = 'bash'
 
 namespace :deploy do
-  after "deploy:update_code", "deploy:compile_assets"
+#  after "deploy:update_code", "deploy:compile_assets"
 
   desc "Deploy and restart"
   task :default do
