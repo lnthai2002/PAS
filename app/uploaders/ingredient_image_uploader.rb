@@ -41,7 +41,7 @@ class IngredientImageUploader < CarrierWave::Uploader::Base
   end
   
   version :medium do
-    process :resize_to_limit=>[200, 200]
+    process :resize_to_limit=>[300, 300]
   end
   
   version :big do
