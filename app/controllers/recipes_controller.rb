@@ -47,7 +47,8 @@ class RecipesController < ApplicationController
   def edit
     @recipe = Recipe.find(params[:id])
     @step = @recipe.steps.build #build a new step, this new one does not have sequence_id YET
-    @ingredient = @recipe.ingredients.build #build new ingredient
+    @quantified_ingredient = @recipe.quantified_ingredients.build #build new ingredient
+    @quantified_ingredient.ingredient = Ingredient.new
   end
 
   # POST /recipes

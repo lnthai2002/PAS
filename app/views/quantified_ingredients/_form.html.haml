@@ -1,0 +1,24 @@
+= form_for [@recipe, @quantified_ingredient], :html=>{:multipart=>true} do |q|
+  - if @quantified_ingredient.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@step.errors.count, "error")
+        prohibited this ingredient from being saved:
+      %ul
+        - @quantified_ingredient.errors.full_messages.each do |msg|
+          %li= msg
+  = q.fields_for :ingredient do |i|
+    %table
+      %tr
+        %th Name
+        %td= i.text_field :name
+      %tr
+        %th Quantity
+        %td=q.text_field :quantity
+      %tr
+        %th Image
+        %td=i.file_field :image
+      %tr
+        %td &nbsp;
+      %tr
+        %td{:colspan=>2, :align=>"right"}= q.submit 'Add'

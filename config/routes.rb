@@ -4,6 +4,7 @@ Pas::Application.routes.draw do
   
   resources :recipes do
     resources :steps
+    resources :quantified_ingredients
   end
   
 
