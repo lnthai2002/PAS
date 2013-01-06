@@ -30,5 +30,24 @@ div.content{
     border-bottom: 1px solid black;
     border-left: 1px solid black;
   }
-} 
-
+  div.ingredient{
+    float:left;
+    margin: 5px;
+    width: 300px;
+    length: 300px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+  }
+  div.step{
+    float:left;
+    margin: 5px;
+    width: 300px;
+    length: 300px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+  }
+}
