@@ -9,7 +9,7 @@
     });
     
     //do not show form to edit receipt info by default
-    $('#js_recipe_form').hide();
+    $('.js_pullable_div').hide();
   });
 
 %h2
@@ -23,7 +23,7 @@
   %tr
     %td{:colspan=>2}
       %fieldset
-        %legend#js_edit_recipe Recipe description
+        %legend.js_pullable_title Recipe description
         = render 'form'
   %tr
     %td
