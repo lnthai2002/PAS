@@ -33,6 +33,11 @@
             = tab.add 'Add', new_expense_path
         
         = tab.music 'Music', songs_path
+        = tabs_tag :namespace => :songs do |tab|
+          = tab.all 'Songs', songs_path
+          = tabs_tag :namespace => :song_actions do |tab|
+            = tab.list 'List', songs_path
+            = tab.scan 'Scan folder', scan_songs_path
         
         = tab.cooking 'Cooking', recipes_path
         = tabs_tag :namespace => :recipes do |tab|

@@ -8,7 +8,12 @@ Pas::Application.routes.draw do
   end
   
 
-  resources :songs
+  resources :songs do
+    collection do
+      get 'scan'
+      post 'scan'
+    end
+  end
 #  match 'songs/download/:id'=>'songs#download', :id => /[^\/]+/
 
   resources :payment_types

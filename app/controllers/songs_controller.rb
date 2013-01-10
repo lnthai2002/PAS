@@ -1,6 +1,12 @@
 require 'tag_info.rb'
 class SongsController < ApplicationController
+  #Service tab
   set_tab :music
+  #Resource tab
+  set_tab :all, :songs
+  #sub-tab, each sub-tab coresponse to one action, they belong to the namespace 'recipe_actions'
+  set_tab :list, :song_actions, :only => %w(index)
+  set_tab :scan, :song_actions, :only => %w(scan)
   # GET /songs
   # GET /songs.json
   def index
@@ -96,7 +102,9 @@ class SongsController < ApplicationController
   end
 
   def scan
-    Resque.enqueue(DiskCrawler, params[:folder])
+    if params[:folder]
+      Mp3Crawler.perform_async(params[:folder])
+    end
   end
 
   def search

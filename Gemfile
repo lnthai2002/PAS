@@ -16,12 +16,12 @@ gem 'tabs_on_rails'                         #allow declaring tab for each contro
 #Convenent coding
 gem 'haml'                                  #shorter syntax to code layout 
 gem 'hash_extension'                        #allow accessing hash like object: has.key in addition to hash[key]
-gem 'carrierwave'                            #easy upload image to server
+gem 'carrierwave'                           #easy upload image to server
 
 #interface to OS packages
 gem 'mini_magick'                           #image manipulation: scale, crop, convert..
 gem 'ruby-mp3info'                          #read and write mp3 tag
-gem 'resque'                                #background queue base on Redis
+gem 'sidekiq'                               #background queue base on Redis
 
 # Gems used only for assets and not required
 # in production environments by default.
