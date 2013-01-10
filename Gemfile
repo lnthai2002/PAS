@@ -21,6 +21,7 @@ gem 'carrierwave'                            #easy upload image to server
 #interface to OS packages
 gem 'mini_magick'                           #image manipulation: scale, crop, convert..
 gem 'ruby-mp3info'                          #read and write mp3 tag
+gem 'resque'                                #background queue base on Redis
 
 # Gems used only for assets and not required
 # in production environments by default.

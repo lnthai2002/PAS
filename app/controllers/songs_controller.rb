@@ -95,6 +95,10 @@ class SongsController < ApplicationController
     end
   end
 
+  def scan
+    Resque.enqueue(DiskCrawler, params[:folder])
+  end
+
   def search
     if params[:search]
       conds = []

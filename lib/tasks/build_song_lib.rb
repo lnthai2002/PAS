@@ -1,66 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + "/../../config/environment")
 require 'logger'
 require 'optparse'
-require 'tag_info.rb'
-
-class DiskCrawler
-  attr_accessor :processor
-
-  def initialize(processor)
-    @processor = processor
-  end
-
-  def scan(top_dir)
-    if not File.exist?(top_dir)
-      raise "#{top_dir} does not exist!"
-    else
-      craw(top_dir)
-    end
-  end
-  
-  def craw(node)
-    if File.directory?(node)
-      puts "Dir: #{node}"
-      Dir.new(node).each do |name|
-        if name !~ /^\./ #no hidden, no current, no parent directories
-          path = "#{node}/#{name}"
-          craw(path)
-        end
-      end
-    else #file
-      @processor.process(node)
-    end
-  end
-end
-
-class Mp3Processor
-  include TagInfo
-
-  def initialize(logger)
-    @log = logger
-  end
-  
-  #Extract mp3 tags and store in DB
-  def process(file)
-    if file =~ /\.mp3$/
-      begin
-        tag = tag_of(file)
-
-        if tag.title.blank?
-          tag.title = File.base_name(file, '.mp3')
-        end
-
-        tag.delete_if{|key, val| not (TagInfo::USEFULL_TAGS.include?(key))} #only take valid tag
-        tag[:location] = file
-
-        song = Song.new(tag)
-        song.save!
-      rescue Exception=>e
-        @log.error(e) #and silently continue
-      end
-    end
-  end
-end
+require 'disk_crawler.rb'
+require 'mp3_processor.rb'
 
 class WMAProcessor
   def process(file)
