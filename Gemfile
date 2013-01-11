@@ -22,7 +22,8 @@ gem 'carrierwave'                           #easy upload image to server
 gem 'mini_magick'                           #image manipulation: scale, crop, convert..
 gem 'ruby-mp3info'                          #read and write mp3 tag
 gem 'sidekiq'                               #background queue base on Redis
-
+gem 'sinatra', :require=>false              #sinatra for sidekiq web interface
+gem 'slim'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

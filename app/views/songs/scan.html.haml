@@ -1,4 +1,12 @@
-%p Folder to be scanned
-= form_tag :action=>'scan', :method=>:post do
-  = text_field_tag 'folder'
-  = submit_tag 'Scan'
+%fieldset
+  %legend Scan for MP3 files
+  = form_tag :action=>'scan' do
+    = text_field_tag 'folder', nil, :placeholder=>'Folder to be scanned'
+    = submit_tag 'Scan'
+
+#js_tasks
+  %table
+    %tr
+      %th Folder
+      %th Status
+    = render :partial=>'task', @tasks

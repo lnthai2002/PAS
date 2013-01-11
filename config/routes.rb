@@ -1,3 +1,4 @@
+require 'sidekiq/web'
 Pas::Application.routes.draw do
 
   resources :ingredients
@@ -23,6 +24,7 @@ Pas::Application.routes.draw do
 
   resources :expenses
 
+  mount Sidekiq::Web, at: '/sidekiq'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
