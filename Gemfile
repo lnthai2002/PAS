@@ -39,5 +39,6 @@ group :development do
  gem 'capistrano'
  gem 'capistrano-ext'
  gem 'rvm-capistrano'                       #support instructing capistrano to choose which ruby version from rvm
+ gem 'rspec-rails'
  gem 'debugger'
 end
