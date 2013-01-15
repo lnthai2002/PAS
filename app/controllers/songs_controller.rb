@@ -103,7 +103,12 @@ class SongsController < ApplicationController
 
   def scan
     if params[:folder]
-      Mp3Crawler.perform_async(params[:folder])
+      task = Task.create(:worker=>"Mp3Crawler", :target=>params[:folder], :status=>'PENDING')
+      if task
+        Mp3Crawler.perform_async(params[:folder], task.id)
+      else
+        flash[:error]='Fail to create task'
+      end
     end
   end
 
