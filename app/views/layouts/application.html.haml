@@ -5,6 +5,8 @@
     %title P.A.S
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
+    = javascript_include_tag "mudim.js"
+    = javascript_include_tag "jmudim-1.0.min.js"
     = csrf_meta_tags
 
 %body
@@ -45,6 +47,7 @@
   .gap
 
   .content
+    = render :partial=>'languages'
     = yield
     
     #footnote
