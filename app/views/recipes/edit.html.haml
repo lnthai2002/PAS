@@ -1,11 +1,18 @@
 :javascript
   $(document).ready(function(){
     $(function() {
-      $(".sortable_list").sortable({ opacity: 0.6, cursor: 'move', update: function() {
-        var order = $(this).sortable("serialize") + '&recipe_id=' + $('#recipe_id').val();
-        $.put("/steps/update_sequences", order, null, null);
-      }
-      });
+      $(".sortable_list").sortable({opacity: 0.6,
+                                    cursor: 'move',
+                                    update: function() {
+                                      var order = $(this).sortable("serialize") +
+                                                  '&recipe_id=' +
+                                                  $('#recipe_id').val();
+                                      $.put("/steps/update_sequences",
+                                            order,
+                                            null,
+                                            null);
+                                    }
+                                  });
     });
     
     //do not show form to edit receipt info by default
@@ -29,7 +36,8 @@
     %td
       %fieldset
         %legend New step
-        = render 'steps/form'
+        #step_form
+          = render 'steps/form'
     %td
       %fieldset
         %legend New ingredient
@@ -37,13 +45,7 @@
   %tr
     %td
       %ol#steps.sortable_list
-        - @recipe.steps.each do |step|
-          - if step.sequence_number
-            %li{:id=>"recordid_#{step.id}"}
-              = link_to 'Edit', edit_recipe_step_path(@recipe, step)
-              |
-              = link_to 'Remove', [@recipe, step], confirm: 'Are you sure?', method: :delete
-              =step.description
+        = render :partial=>'steps/steps'
     %td
       %ul#ingredients
         - @recipe.quantified_ingredients.each do |qingredient|

@@ -36,12 +36,10 @@ class StepsController < ApplicationController
       format.json { render json: @step }
     end
   end
-
-  # GET /steps/1/edit
-  def edit
-    @step = Step.find(params[:id])
-  end
 =end
+  
+  def edit
+  end
 
   # POST /steps
   # POST /steps.json
@@ -50,34 +48,27 @@ class StepsController < ApplicationController
     @step = @recipe.steps.build(params[:step])
     @step.sequence_number = next_step
 
-    respond_to do |format|
-      if @step.save
-        format.html { redirect_to edit_recipe_path(@recipe), notice: 'A step was successfully added.' }
-        format.json { render json: @step, status: :created, location: @step }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @step.errors, status: :unprocessable_entity }
-      end
+    if @step.save
+      build_new_step
+      render :update
+    else
+      
     end
   end
 
-=begin
   # PUT /steps/1
   # PUT /steps/1.json
   def update
-    @step = Step.find(params[:id])
-
-    respond_to do |format|
-      if @step.update_attributes(params[:step])
-        format.html { redirect_to @step, notice: 'Step was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @step.errors, status: :unprocessable_entity }
-      end
+    debugger
+    if @step.update_attributes(params[:step])
+      build_new_step
+      render :update
+    else
+      
     end
+    
   end
-=end
+
   # DELETE /steps/1
   # DELETE /steps/1.json
   def destroy
@@ -104,6 +95,11 @@ class StepsController < ApplicationController
   end
 
 private
+  def build_new_step
+    #build a new step, this new one does not have sequence_id YET
+    @step = @recipe.steps.build
+  end
+
   def find_recipe
     @recipe = Recipe.find(params[:recipe_id])
   end
