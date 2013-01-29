@@ -23,6 +23,7 @@
   Editing recipe for
   = @recipe.name
   %p#notice= notice
+  = hidden_field_tag :recipe_id, @recipe.id
 
 %div= image_tag @recipe.image_url(:medium).to_s
 
