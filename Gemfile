@@ -7,6 +7,7 @@ gem 'devise'
 #Javascript lib
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'remotipart'                            #allow submit ajax form with multipart 
 
 #Visual
 gem 'will_paginate'                         #pagination
