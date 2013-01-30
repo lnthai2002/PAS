@@ -1,0 +1,28 @@
+= form_for [@recipe, @step], :html=>{:multipart=>true, :remote=>true} do |f|
+  - if @step.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@step.errors.count, "error")
+        prohibited this step from being saved:
+      %ul
+        - @step.errors.full_messages.each do |msg|
+          %li= msg
+  %table
+    %tr
+      %th Description
+      %td{:rowspan=>"2"}= f.text_area :description, :rows=>2
+    %tr
+      %td
+        &nbsp;
+    %tr
+      %th Image
+      %td=f.file_field :image
+    - if @step.new_record?
+      %tr
+        %td &nbsp;
+    -else
+      %tr
+        %th Remove image
+        %td= f.check_box :remove_image
+    %tr
+      %td{:colspan=>2, :align=>"right"}= f.submit 'Add'
