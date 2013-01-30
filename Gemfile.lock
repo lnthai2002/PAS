@@ -124,6 +124,7 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     ref (1.0.2)
+    remotipart (1.0.2)
     ruby-mp3info (0.7.1)
     rvm-capistrano (1.2.7)
       capistrano (>= 2.0.0)
@@ -174,6 +175,7 @@ DEPENDENCIES
   mini_magick
   mysql2
   rails (= 3.2.9)
+  remotipart
   ruby-mp3info
   rvm-capistrano
   sass-rails (~> 3.2.3)
