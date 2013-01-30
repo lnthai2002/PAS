@@ -59,7 +59,6 @@ class StepsController < ApplicationController
   # PUT /steps/1
   # PUT /steps/1.json
   def update
-    debugger
     if @step.update_attributes(params[:step])
       build_new_step
       render :update
