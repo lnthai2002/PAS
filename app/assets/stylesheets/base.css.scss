@@ -2,25 +2,25 @@
 body{
   position:absolute;
 }
-div.navigation,.gap,.content{
+.navigation,.gap,.content{
   float:right;
   margin-right:10px; 
 }
 
-div.navigation{
+.navigation{
   .current {color:orange; font-weight:bold; font-style:italic;}
   .menuTitle {font-weight:bold;}
   a {font-style:italic;}  
 }
 
-div.content{
-  fieldset legend{color:orange; font-weight:bold}
+.content{
+  legend{color:orange; font-weight:bold}
   #footnote{
     float:bottom;
     font-weight:lighter;
     color:LightGray;
   }
-  div.recipe{
+  .recipe{
     //float:left;
     margin: 5px;
     width: 140px;
@@ -30,7 +30,7 @@ div.content{
     border-bottom: 1px solid black;
     border-left: 1px solid black;
   }
-  div.ingredient{
+  .ingredient{
     float:left;
     margin: 5px;
     width: 300px;
@@ -40,7 +40,7 @@ div.content{
     border-bottom: 1px solid black;
     border-left: 1px solid black;
   }
-  div.step{
+  .step{
     float:left;
     margin: 5px;
     width: 300px;
