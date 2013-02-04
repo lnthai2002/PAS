@@ -34,7 +34,7 @@ group :assets do
   gem 'libv8'                               #need to have this to make therubyracer works. This expose OS libv8 to ruby
 end
 
-group :development do
+group :development, :test do
 # Deploy with Capistrano
  gem 'capistrano'
  gem 'capistrano-ext'
