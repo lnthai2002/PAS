@@ -47,5 +47,10 @@ module Pas
     
     #do not use timestamp in migration version
     config.active_record.timestamped_migrations = false
+    
+    #replace fixture with factory
+    #config.generators do |g|
+    #  g.fixture_replacement :factory_girl
+    #end
   end
 end

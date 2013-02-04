@@ -34,10 +34,12 @@ group :assets do
   gem 'libv8'                               #need to have this to make therubyracer works. This expose OS libv8 to ruby
 end
 
-group :development do
+group :development, :test do
 # Deploy with Capistrano
  gem 'capistrano'
  gem 'capistrano-ext'
  gem 'rvm-capistrano'                       #support instructing capistrano to choose which ruby version from rvm
+ gem 'rspec-rails'                          #test support
+ gem 'factory_girl_rails'                   #to create mock data for testing
  gem 'debugger'
 end
