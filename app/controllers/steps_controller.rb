@@ -44,9 +44,7 @@ class StepsController < ApplicationController
   # POST /steps
   # POST /steps.json
   def create
-    next_step = @recipe.steps.maximum('sequence_number').to_i + 1
     @step = @recipe.steps.build(params[:step])
-    @step.sequence_number = next_step
 
     if @step.save
       build_new_step
