@@ -45,9 +45,11 @@
   .gap
 
   .content
+    = render :partial=>'action_menu'
+    %hr
     = render :partial=>'languages'
     = yield
-    
+
     #footnote
       %hr
       %p Menu on right since only ~15% of people are left-handed (should i consider those other 75% jerking off right handed while holding the tablet left hand?)
