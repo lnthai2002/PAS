@@ -36,4 +36,10 @@ class UsersController < ApplicationController
       render :save
     end
   end
+
+protected
+
+  def fetch_user
+    @user = User.find(params[:id])
+  end
 end
