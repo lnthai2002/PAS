@@ -1,0 +1,6 @@
+=form_for @user do |f|
+  =f.text_field :email, :placeholder=>'email'
+  %br
+  =f.password_field :password, :placeholder=>'password'
+  %br
+  =f.submit submit_label
