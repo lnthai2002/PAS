@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  establish_connection "cas_#{Rails.env}"
   attr_accessor :password
   # attr_accessible :title, :body
   before_validation(:on=>:create) {set_salt}
