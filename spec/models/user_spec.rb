@@ -22,6 +22,6 @@ describe User do
 
   it 'belongs to one or more groups' do
     user = User.new
-    user.should be_response_to(:groups)
+    user.should be_respond_to(:groups)
   end
 end
