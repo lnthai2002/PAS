@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter RubyCAS::Filter
   before_filter :fetch_user, :only=>[:show, :edit, :update, :destroy]
   set_tab :account
   def index

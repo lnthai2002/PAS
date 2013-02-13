@@ -3,6 +3,8 @@ source 'http://rubygems.org'
 gem 'rails', '3.2.9'
 gem 'mysql2'
 gem 'devise'
+gem "rubycas-client-rails", :git => "git://github.com/rubycas/rubycas-client-rails.git"
+gem "rubycas-client"
 
 #Javascript lib
 gem 'jquery-rails'
