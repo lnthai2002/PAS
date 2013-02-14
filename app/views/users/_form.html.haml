@@ -3,4 +3,6 @@
   %br
   =f.password_field :password, :placeholder=>'password'
   %br
+  =f.select :group_ids, options_from_collection_for_select(Group.all,"id", "name", @user.group_ids), {}, {:multiple => true, :size =>10}
+  %br
   =f.submit submit_label

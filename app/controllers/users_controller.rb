@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter RubyCAS::Filter
+  before_filter :authorize_user
   before_filter :fetch_user, :only=>[:show, :edit, :update, :destroy]
   set_tab :account
   def index
@@ -42,5 +43,12 @@ protected
 
   def fetch_user
     @user = User.find(params[:id])
+  end
+
+  def authorize_user
+    user = User.where(:email=>session[:cas_user]).first
+    if user.blank? || user.groups.where(:name=>'admin').all.blank?
+      render :file => "public/401.html", :status => :unauthorized
+    end
   end
 end

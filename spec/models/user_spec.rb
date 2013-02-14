@@ -19,4 +19,9 @@ describe User do
     updated_user = User.find(user.id) #workaroud activerecord cache
     updated_user.encrypted_password.should == old_pass
   end
+
+  it 'belongs to one or more groups' do
+    user = User.new
+    user.should be_respond_to(:groups)
+  end
 end
