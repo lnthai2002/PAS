@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_filter RubyCAS::Filter
+  before_filter :authorize_user
   before_filter :fetch_group, :only=>[:show, :edit, :update, :destroy]
   def index
     @groups = Group.all
@@ -42,5 +44,12 @@ protected
 
   def fetch_group
     @group = Group.find(params[:id])
+  end
+
+  def authorize_user
+    user = User.where(:email=>session[:cas_user]).first
+    if user.blank? || user.groups.where(:name=>'admin').all.blank?
+      render :file => "public/401.html", :status => :unauthorized
+    end
   end
 end
