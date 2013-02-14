@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :password
+  attr_accessible :email, :password, :group_ids
   has_many :memberships
   has_many :groups, :through=>:memberships
   attr_accessible :title, :body
