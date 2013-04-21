@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.13'
 gem 'mysql2'
 gem 'devise'
 gem "rubycas-client-rails", :git => "git://github.com/rubycas/rubycas-client-rails.git"
@@ -32,8 +32,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'                #compress JS and CSS into smaller file
   gem 'execjs'                              #ruby interface to JS
-  gem 'therubyracer', :platforms => :ruby   #one of many JS runtime
-  gem 'libv8'                               #need to have this to make therubyracer works. This expose OS libv8 to ruby
+  gem 'therubyracer', :require => 'v8'      #one of many JS runtime
 end
 
 group :development, :test do
