@@ -6,6 +6,9 @@ gem 'devise'
 gem "rubycas-client-rails", :git => "git://github.com/rubycas/rubycas-client-rails.git"
 gem "rubycas-client"
 
+#engines
+gem 'cooking', :path => "vendor/engines/cooking"
+
 #Javascript lib
 gem 'jquery-rails'
 gem 'jquery-ui-rails'

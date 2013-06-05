@@ -1,5 +1,8 @@
 Pas::Application.routes.draw do
 
+  #engines
+  mount Cooking::Engine => "/cooking"
+
   resources :ingredients
   
   resources :recipes do
