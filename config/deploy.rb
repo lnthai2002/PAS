@@ -7,6 +7,7 @@ load "deploy/assets"
 
 #declare multi-stage deployment
 require 'capistrano/ext/multistage'
+set :git_enable_submodules, 1
 set :stages, %w(production uat)
 set :default_stage, "uat"
 
