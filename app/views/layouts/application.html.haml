@@ -12,6 +12,10 @@
     %fieldset
       %legend
         %span.menuTitle Services
+      - Pas::Application.config.ui_modules.each do |ui_mod|
+        = link_to ui_mod.upcase, "/#{ui_mod}"
+
+    -#
       = tabs_tag do |tab|
         = tab.financial 'Financial', expenses_path
         = tabs_tag :namespace => :expense_types do |tab|
