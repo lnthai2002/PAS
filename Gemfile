@@ -8,6 +8,7 @@ gem "rubycas-client"
 
 #engines
 gem 'cooking', :path => "vendor/engines/cooking"
+gem 'financial', :path => "vendor/engines/financial"
 
 #Javascript lib
 gem 'jquery-rails'

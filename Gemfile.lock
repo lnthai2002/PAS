@@ -16,6 +16,14 @@ PATH
       rails (~> 3.2.13)
       tabs_on_rails
 
+PATH
+  remote: vendor/engines/financial
+  specs:
+    financial (0.0.1)
+      haml
+      rails (~> 3.2.13)
+      tabs_on_rails
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -201,6 +209,7 @@ DEPENDENCIES
   devise
   execjs
   factory_girl_rails
+  financial!
   haml
   hash_extension
   jquery-rails
