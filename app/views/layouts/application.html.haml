@@ -13,7 +13,8 @@
       %legend
         %span.menuTitle Services
       - Pas::Application.config.ui_modules.each do |ui_mod|
-        = link_to ui_mod.upcase, "/#{ui_mod}"
+        = link_to ui_mod.upcase, "#{root_url}#{ui_mod}"
+        %br
 
     -#
       = tabs_tag do |tab|
