@@ -13,7 +13,7 @@
       %legend
         %span.menuTitle Services
       - Pas::Application.config.ui_modules.each do |ui_mod|
-        = link_to ui_mod.upcase, "#{root_url}#{ui_mod}"
+        %a{:href=>"http://darkportal.no-ip.info/pas/#{ui_mod}"}=ui_mod.upcase
         %br
 
     -#
