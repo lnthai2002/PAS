@@ -23,6 +23,11 @@ namespace :deploy do
   task :copy_database_configuration do
     run "cp #{db_config_loc} #{release_path}/config/database.yml"
   end
+
+  desc "Restart passenger with restart.txt"
+  task :restart, :except => { :no_release => true } do
+    run "touch #{current_path}/tmp/restart.txt"
+  end
 end
 =begin
 #declaration to use with user based RVM, rails 1.9.2, gemset pas
