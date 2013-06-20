@@ -1,0 +1,3 @@
+[submodule "vendor/engines/cooking"]
+	path = vendor/engines/cooking
+	url = git@github.com:lnthai2002/cooking.git

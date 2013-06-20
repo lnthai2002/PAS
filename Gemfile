@@ -6,6 +6,9 @@ gem 'devise'
 gem "rubycas-client-rails", :git => "git://github.com/rubycas/rubycas-client-rails.git"
 gem "rubycas-client"
 
+#engines
+gem 'cooking', :path => "vendor/engines/cooking"
+
 #Javascript lib
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -32,7 +35,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'                #compress JS and CSS into smaller file
   gem 'execjs'                              #ruby interface to JS
-  gem 'therubyracer', :require => 'v8'      #one of many JS runtime
+  #gem 'therubyracer', :require => 'v8'      #one of many JS runtime
 end
 
 group :development, :test do

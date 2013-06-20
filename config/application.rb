@@ -52,6 +52,9 @@ module Pas
     config.rubycas.cas_base_url = 'https://darkportal.no-ip.info'
     config.rubycas.logger = Rails.logger
 
+    #engine that served as UI module
+    config.ui_modules = []
+
     #replace fixture with factory
     #config.generators do |g|
     #  g.fixture_replacement :factory_girl

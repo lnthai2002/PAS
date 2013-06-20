@@ -12,6 +12,11 @@
     %fieldset
       %legend
         %span.menuTitle Services
+      - Pas::Application.config.ui_modules.each do |ui_mod|
+        %a{:href=>"http://darkportal.no-ip.info/pas/#{ui_mod}"}=ui_mod.upcase
+        %br
+
+    -#
       = tabs_tag do |tab|
         = tab.financial 'Financial', expenses_path
         = tabs_tag :namespace => :expense_types do |tab|
@@ -45,9 +50,11 @@
   .gap
 
   .content
+    = render :partial=>'action_menu'
+    %hr
     = render :partial=>'languages'
     = yield
-    
+
     #footnote
       %hr
       %p Menu on right since only ~15% of people are left-handed (should i consider those other 75% jerking off right handed while holding the tablet left hand?)
