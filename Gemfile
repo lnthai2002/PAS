@@ -24,6 +24,7 @@ gem 'tabs_on_rails'                         #allow declaring tab for each contro
 gem 'haml'                                  #shorter syntax to code layout 
 gem 'hash_extension'                        #allow accessing hash like object: has.key in addition to hash[key]
 gem 'carrierwave'                            #easy upload image to server
+gem 'dynamic_form'
 
 #interface to OS packages
 gem 'mini_magick'                           #image manipulation: scale, crop, convert..
