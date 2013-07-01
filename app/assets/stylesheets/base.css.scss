@@ -7,19 +7,27 @@ body{
   margin-right:10px; 
 }
 
+.current {color:orange; font-weight:bold; font-style:italic;}
 .navigation{
-  .current {color:orange; font-weight:bold; font-style:italic;}
   .menuTitle {font-weight:bold;}
   a {font-style:italic;}  
 }
 
 .content{
   legend{color:orange; font-weight:bold}
+  
   #footnote{
     float:bottom;
     font-weight:lighter;
     color:LightGray;
   }
+  
+  #usecases_nav,#resources_nav,#actions_nav{
+    li{display: inline;list-style-type: none;padding-right: 10px}
+  }
+  .odd {background-color:LightGray}
+  .even{background-color:White}
+  
   .recipe{
     //float:left;
     margin: 5px;
