@@ -8,6 +8,7 @@ gem "rubycas-client"
 
 #engines
 gem 'cooking', :path => "vendor/engines/cooking"
+gem 'financial', :path => "vendor/engines/financial"
 
 #Javascript lib
 gem 'jquery-rails'
@@ -22,7 +23,9 @@ gem 'tabs_on_rails'                         #allow declaring tab for each contro
 #Convenent coding
 gem 'haml'                                  #shorter syntax to code layout 
 gem 'hash_extension'                        #allow accessing hash like object: has.key in addition to hash[key]
-gem 'carrierwave'                            #easy upload image to server
+gem 'carrierwave'                           #easy upload image to server
+gem 'dynamic_form'
+gem 'money-rails'
 
 #interface to OS packages
 gem 'mini_magick'                           #image manipulation: scale, crop, convert..

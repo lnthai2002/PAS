@@ -2,6 +2,7 @@ Pas::Application.routes.draw do
 
   #engines
   mount Cooking::Engine => "/cooking"
+  mount Financial::Engine => "/financial"
 
   resources :ingredients
   
