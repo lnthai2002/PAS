@@ -27,35 +27,4 @@ body{
   }
   .odd {background-color:LightGray}
   .even{background-color:White}
-  
-  .recipe{
-    //float:left;
-    margin: 5px;
-    width: 140px;
-    length: 140px;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-  }
-  .ingredient{
-    float:left;
-    margin: 5px;
-    width: 300px;
-    length: 300px;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-  }
-  .step{
-    float:left;
-    margin: 5px;
-    width: 300px;
-    length: 300px;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-  }
 }
