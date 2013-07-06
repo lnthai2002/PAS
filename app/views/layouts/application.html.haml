@@ -38,15 +38,6 @@
             = tab.add 'Add', new_expense_path
         
         = tab.music 'Music', songs_path
-        
-        = tab.cooking 'Cooking', recipes_path
-        = tabs_tag :namespace => :recipes do |tab|
-          = tab.all 'Recipes', recipes_path
-          = tabs_tag :namespace => :recipe_actions do |tab|
-            = tab.list 'List', recipes_path
-            = tab.add 'Add', new_recipe_path
-            = tab.edit 'Edit', edit_recipe_path(@recipe) if (@recipe && !@recipe.new_record?)
-            = tab.show 'Detail', recipe_path(@recipe) if (@recipe && !@recipe.new_record?)
   .gap
 
   .content
