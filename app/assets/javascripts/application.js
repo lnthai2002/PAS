@@ -22,11 +22,4 @@ $(document).ready(function(){
 	  	current_submenu.show();
 	  }
 	})
-
-	//Show and hide div____________________
-	$(document).ready(function(){
-		$('.js_pullable_title').click(function(e){
-			$(e.currentTarget).nextAll('.js_pullable_div:first').slideToggle();
-		})
-	});
 })
