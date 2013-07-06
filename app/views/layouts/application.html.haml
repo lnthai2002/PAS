@@ -4,9 +4,7 @@
   %head
     %title P.A.S
     = stylesheet_link_tag    "application"
-    = javascript_include_tag "application"
-    = stylesheet_link_tag    "financial/application"
-    = javascript_include_tag "financial/application"
+    = render :partial=>'assets'
     = csrf_meta_tags
 
 %body
@@ -54,7 +52,6 @@
   .content
     = render :partial=>'usecases_nav'
     %hr
-    = render :partial=>'languages'
     = yield
 
     #footnote
