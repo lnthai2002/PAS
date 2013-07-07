@@ -2,15 +2,7 @@ Pas::Application.routes.draw do
 
   #engines
   mount Cooking::Engine => "/cooking"
-  mount Financial::Engine => "/financial"
-
-  resources :ingredients
-  
-  resources :recipes do
-    resources :steps
-    resources :quantified_ingredients
-  end
-  
+  mount Financial::Engine => "/financial"  
 
   resources :songs
 #  match 'songs/download/:id'=>'songs#download', :id => /[^\/]+/
