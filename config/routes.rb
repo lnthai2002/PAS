@@ -6,14 +6,6 @@ Pas::Application.routes.draw do
 
   resources :songs
 #  match 'songs/download/:id'=>'songs#download', :id => /[^\/]+/
-
-  resources :payment_types
-
-  match 'expenses/:year/:month' => 'expenses#index', :defaults=>{:year=>nil,:month=>nil}, :conditions=>{:method=>:get}
-  resources :exp_types
-
-  resources :expenses
-
   resources :users
   resources :groups
   # The priority is based upon order of creation:

@@ -1,6 +1,7 @@
 //positioning application layout's main div'
 body{
   position:absolute;
+  width: 100%;
 }
 .navigation,.gap,.content{
   float:right;
@@ -14,6 +15,7 @@ body{
 }
 
 .content{
+  width: 100%;
   legend{color:orange; font-weight:bold}
   
   #footnote{
