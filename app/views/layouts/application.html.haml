@@ -8,38 +8,6 @@
     = csrf_meta_tags
 
 %body
-  .navigation
-    %fieldset
-      %legend
-        %span.menuTitle Services
-      - Pas::Application.config.ui_modules.each do |ui_mod|
-        %a{:href=>"http://darkportal.no-ip.info/pas/#{ui_mod}"}=ui_mod.upcase
-        %br
-
-    -#
-      = tabs_tag do |tab|
-        = tab.financial 'Financial', expenses_path
-        = tabs_tag :namespace => :expense_types do |tab|
-          = tab.all 'Expense Types', exp_types_path
-          = tabs_tag :namespace => :expense_type_actions do |tab|
-            = tab.list 'List', exp_types_path
-            = tab.add 'Add', new_exp_type_path
-        
-        = tabs_tag :namespace => :payment_types do |tab|
-          = tab.all 'Payment Types', payment_types_path
-          = tabs_tag :namespace => :payment_type_actions do |tab|
-            = tab.list 'List', payment_types_path
-            = tab.add 'Add', new_payment_type_path
-        
-        = tabs_tag :namespace => :expenses do |tab|
-          = tab.all 'Expenses', expenses_path
-          = tabs_tag :namespace => :expense_actions do |tab|
-            = tab.list 'List', expenses_path
-            = tab.add 'Add', new_expense_path
-        
-        = tab.music 'Music', songs_path
-  .gap
-
   .content
     = render :partial=>'usecases_nav'
     %hr
