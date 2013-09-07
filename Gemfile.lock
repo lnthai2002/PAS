@@ -12,17 +12,28 @@ PATH
     cooking (0.0.1)
       carrierwave
       haml
+      jquery-rails
+      jquery-ui-rails
       mini_magick
       rails (~> 3.2.13)
+      remotipart
       tabs_on_rails
 
 PATH
   remote: vendor/engines/financial
   specs:
     financial (0.0.1)
+      cancan
+      dynamic_form
       haml
+      ice_cube
+      money-rails
+      mysql2
       rails (~> 3.2.13)
+      rubycas-client
+      rubycas-client-rails
       tabs_on_rails
+      whenever
 
 GEM
   remote: http://rubygems.org/
@@ -58,6 +69,7 @@ GEM
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
     calendar_date_select (1.16.4)
+    cancan (1.6.10)
     capistrano (2.15.4)
       highline
       net-scp (>= 1.0.0)
@@ -69,6 +81,7 @@ GEM
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+    chronic (0.10.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -104,6 +117,7 @@ GEM
     highline (1.6.19)
     hike (1.2.3)
     i18n (0.6.1)
+    ice_cube (0.11.0)
     journey (1.0.4)
     jquery-rails (3.0.0)
       railties (>= 3.0, < 5.0)
@@ -200,6 +214,9 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
+    whenever (0.8.4)
+      activesupport (>= 2.3.4)
+      chronic (>= 0.6.3)
     will_paginate (3.0.4)
 
 PLATFORMS
@@ -207,6 +224,7 @@ PLATFORMS
 
 DEPENDENCIES
   calendar_date_select
+  cancan
   capistrano
   capistrano-ext
   carrierwave
@@ -220,6 +238,7 @@ DEPENDENCIES
   financial!
   haml
   hash_extension
+  ice_cube
   jquery-rails
   jquery-ui-rails
   mini_magick
@@ -235,4 +254,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   tabs_on_rails
   uglifier (>= 1.0.3)
+  whenever
   will_paginate
