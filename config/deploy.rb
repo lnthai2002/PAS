@@ -1,5 +1,8 @@
 require "rvm/capistrano"                              #use RVM
 require "bundler/capistrano"                          #use bundler
+require "whenever/capistrano"                         #update cron when deploy
+set :whenever_command, "bundle exec whenever"
+
 load "deploy/assets"                                  #compile asset when deploy
 default_run_options[:pty] = true                      #must be set for the password prompt from git to work
 
