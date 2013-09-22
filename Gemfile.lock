@@ -68,6 +68,9 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
+    byebug (2.1.1)
+      columnize (~> 0.3.6)
+      debugger-linecache (~> 1.2.0)
     calendar_date_select (1.16.4)
     cancan (1.6.10)
     capistrano (2.15.4)
@@ -90,12 +93,7 @@ GEM
       execjs
     coffee-script-source (1.6.2)
     columnize (0.3.6)
-    debugger (1.6.0)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.2.0)
-      debugger-ruby_core_source (~> 1.2.1)
     debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.2.2)
     devise (2.2.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -223,6 +221,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  byebug
   calendar_date_select
   cancan
   capistrano
@@ -230,7 +229,6 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   cooking!
-  debugger
   devise
   dynamic_form
   execjs
