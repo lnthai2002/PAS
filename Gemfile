@@ -51,5 +51,6 @@ group :development, :test do
  gem 'rvm-capistrano'                       #support instructing capistrano to choose which ruby version from rvm
  gem 'rspec-rails'                          #test support
  gem 'factory_girl_rails'                   #to create mock data for testing
- gem 'debugger'
+# gem 'debugger'
+ gem 'byebug'
 end
