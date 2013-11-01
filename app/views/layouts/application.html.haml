@@ -6,13 +6,11 @@
     = stylesheet_link_tag    "application"
     = render :partial=>'assets'
     = csrf_meta_tags
+    %meta{:name=>"viewport", :content=>"initial-scale=1, width=device-width"}
 
 %body
   .content
-    = render :partial=>'usecases_nav'
+    #nav
+      = render :partial=>'usecases_nav'
     %hr
     = yield
-
-    #footnote
-      %hr
-      %p Menu on right since only ~15% of people are left-handed (should i consider those other 75% jerking off right handed while holding the tablet left hand?)
