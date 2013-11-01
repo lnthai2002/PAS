@@ -1,11 +1,15 @@
 //positioning application layout's main div'
+html{
+  font-size:100%;
+}
+
 body{
   position:absolute;
   width: 100%;
 }
 .navigation,.gap,.content{
   float:right;
-  margin-right:10px; 
+  //margin-right:0%; 
 }
 
 .current {color:orange; font-weight:bold; font-style:italic;}
@@ -16,7 +20,6 @@ body{
 
 .content{
   width: 100%;
-  legend{color:orange; font-weight:bold}
   
   #footnote{
     float:bottom;
@@ -25,7 +28,8 @@ body{
   }
   
   #usecases_nav,#resources_nav,#actions_nav{
-    li{display: inline;list-style-type: none;padding-right: 10px}
+    ul{padding: 0%; margin: 0.5em}
+    li{display: inline;list-style-type: none;padding-right: 0.5em}
   }
   .odd {background-color:LightGray}
   .even{background-color:White}
