@@ -15,6 +15,7 @@ gem 'financial', :path => "vendor/engines/financial"
 gem 'jquery-rails'
 gem 'jquery-rails-cdn'
 gem 'jquery-ui-rails'
+gem 'jquery-ui-rails-cdn'
 gem 'remotipart'                            #allow submit ajax form with multipart 
 
 #Visual
