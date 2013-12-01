@@ -23,6 +23,7 @@ PATH
   remote: vendor/engines/financial
   specs:
     financial (0.0.1)
+      bootstrap-sass (~> 3.0.2.0)
       cancan
       dynamic_form
       haml
@@ -32,7 +33,6 @@ PATH
       rails (~> 3.2.13)
       rubycas-client
       rubycas-client-rails
-      tabs_on_rails
       whenever
 
 GEM
@@ -67,6 +67,8 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
+    bootstrap-sass (3.0.2.1)
+      sass (~> 3.2)
     builder (3.0.4)
     byebug (2.1.1)
       columnize (~> 0.3.6)
