@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :email, :password, :group_ids
+  #attr_accessible :email, :password, :group_ids
   has_many :memberships
   has_many :groups, :through=>:memberships
-  attr_accessible :title, :body
+  #attr_accessible :title, :body
   before_validation(:on=>:create) {set_salt}
   before_save :encrypt_password
 
