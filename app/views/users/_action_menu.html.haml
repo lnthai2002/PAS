@@ -3,4 +3,4 @@
   = link_to_unless_current('List', users_path)
   = link_to_unless_current('Add', new_user_path)
   = link_to_unless_current('Edit', edit_user_path(@user)) if (@user && !@user.new_record?)
-  = link_to_unless_current('Remove', user_path(@user), :confirm=>'Are you sure?', :method=>:delete) if (@user && !@user.new_record?)
+  = link_to_unless_current('Remove', user_path(@user), data: {confirm: 'Are you sure?'}, method: :delete) if (@user && !@user.new_record?)

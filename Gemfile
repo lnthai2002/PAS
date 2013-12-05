@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.1'
 gem 'mysql2'
 gem 'devise'
 gem "rubycas-client-rails", :git => "git://github.com/rubycas/rubycas-client-rails.git"
@@ -36,13 +36,12 @@ gem 'whenever'
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'                #compress JS and CSS into smaller file
-  gem 'execjs'                              #ruby interface to JS
-  #gem 'therubyracer', :require => 'v8'      #one of many JS runtime
-end
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'                            #compress JS and CSS into smaller file
+gem 'execjs'                              #ruby interface to JS
+#gem 'therubyracer', :require => 'v8'     #one of many JS runtime
+
 
 group :development, :test do
 # Deploy with Capistrano

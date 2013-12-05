@@ -1,6 +1,6 @@
 %ul
   -@groups.each do |group|
     %li
-      =link_to 'remove', group_path(group), :confirm => 'Are you sure?', :method => :delete
+      =link_to 'remove', group_path(group), data: {confirm: 'Are you sure?'}, method: :delete
       >
       =link_to group.name, edit_group_path(group)
