@@ -47,7 +47,7 @@ module Pas
     config.active_record.timestamped_migrations = false
 
     #Central Authentication System
-    config.rubycas.cas_base_url = 'https://darkportal.no-ip.info'
+    config.rubycas.cas_base_url = 'https://darkportal.no-ip.info/cas'
     config.rubycas.logger = Rails.logger
 
     #engine that served as UI module
