@@ -3,8 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '4.0.1'
 gem 'mysql2'
 gem 'devise'
-gem "rubycas-client-rails", :git => "git://github.com/rubycas/rubycas-client-rails.git"
-gem "rubycas-client"
+gem "rubycas-client", :git=>"https://github.com/rubycas/rubycas-client.git"
 gem 'cancan'
 
 #engines
