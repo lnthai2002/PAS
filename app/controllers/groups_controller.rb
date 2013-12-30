@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_filter RubyCAS::Filter
+  before_filter CASClient::Frameworks::Rails::Filter
   before_filter :authorize_user
   before_filter :fetch_group, :only=>[:show, :edit, :update, :destroy]
   def index

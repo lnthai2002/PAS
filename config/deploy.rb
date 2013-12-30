@@ -19,7 +19,7 @@ set :default_stage, "uat"
 
 set :application, "pas"                               #name of application
 
-set :shared_children, shared_children + %w{public/cooking}    #share cooking upload folder accross deployment
+set :shared_children, shared_children + %w{public/cooking tmp/sessions}    #share cooking upload folder accross deployment
 
 namespace :deploy do
   after "deploy:update_code" , "deploy:copy_database_configuration"

@@ -26,4 +26,7 @@ Pas::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  # Disable request forgery protection to support CAS single-sign-out
+  #config.action_controller.allow_forgery_protection    = false
 end

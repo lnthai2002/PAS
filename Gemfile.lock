@@ -1,10 +1,9 @@
 GIT
-  remote: git://github.com/rubycas/rubycas-client-rails.git
-  revision: b97de6edc7871bc43ca1c9572f4d9188a210b341
+  remote: https://github.com/rubycas/rubycas-client.git
+  revision: d0e22cb2a098879d0369c8109386cb8338b1dc2e
   specs:
-    rubycas-client-rails (0.1.1)
-      rails (>= 3.0.0)
-      rubycas-client (~> 2.3.9.rc1)
+    rubycas-client (2.3.10.rc1)
+      activesupport
 
 PATH
   remote: vendor/engines/cooking
@@ -32,7 +31,6 @@ PATH
       mysql2
       rails (~> 4.0.1)
       rubycas-client
-      rubycas-client-rails
       whenever
 
 GEM
@@ -116,7 +114,7 @@ GEM
     hash_extension (0.0.4)
     highline (1.6.20)
     hike (1.2.3)
-    i18n (0.6.5)
+    i18n (0.6.9)
     ice_cube (0.11.1)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
@@ -164,7 +162,7 @@ GEM
       activesupport (= 4.0.1)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (10.1.0)
+    rake (10.1.1)
     remotipart (1.2.1)
     rspec-core (2.14.7)
     rspec-expectations (2.14.4)
@@ -178,8 +176,6 @@ GEM
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
     ruby-mp3info (0.8.2)
-    rubycas-client (2.3.10.rc1)
-      activesupport
     rvm-capistrano (1.5.1)
       capistrano (~> 2.15.4)
     sass (3.2.12)
@@ -245,8 +241,7 @@ DEPENDENCIES
   remotipart
   rspec-rails
   ruby-mp3info
-  rubycas-client
-  rubycas-client-rails!
+  rubycas-client!
   rvm-capistrano
   sass-rails
   tabs_on_rails
