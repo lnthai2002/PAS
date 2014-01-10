@@ -15,7 +15,7 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new(params[:group])
+    @group = Group.new(group_params)
     if @group.save
       redirect_to groups_path
     else
@@ -28,7 +28,7 @@ class GroupsController < ApplicationController
   end
 
   def update
-    if @group.update_attributes(params[:group])
+    if @group.update(group_params)
       redirect_to group_path(@group)
     else
       render :edit
@@ -47,9 +47,17 @@ protected
   end
 
   def authorize_user
-    user = User.where(:email=>session[:cas_user]).first
-    if user.blank? || user.groups.where(:name=>'admin').all.blank?
+    if !User.joins(:groups)
+            .where('email'=>session[:cas_user],
+                   'groups.name'=>'admin')
+            .exists?
       render :file => "public/401.html", :status => :unauthorized
     end
+  end
+
+private
+
+  def group_params
+    params.require(:group).permit(:name)
   end
 end
