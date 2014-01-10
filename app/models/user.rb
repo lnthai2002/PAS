@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   has_many :groups, :through=>:memberships
   #attr_accessible :title, :body
   before_validation(:on=>:create) {set_salt}
+  
+  validates :password, :presence=>:true, :on=>:create 
+  
   before_save :encrypt_password
 
 protected

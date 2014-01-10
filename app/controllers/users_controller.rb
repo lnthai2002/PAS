@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to users_path
     else
-      render :save
+      render :new
     end
   end
 
@@ -57,6 +57,6 @@ protected
 private
 
   def user_params
-    params.require(:user).permit(:email)
+    params.require(:user).permit(:email, :password)
   end
 end
