@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(params[:user])
+    if @user.update(user_params)
       redirect_to users_path
     else
       render :edit
@@ -31,11 +31,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
     if @user.save
       redirect_to users_path
     else
-      render :save
+      render :new
     end
   end
 
@@ -46,9 +46,17 @@ protected
   end
 
   def authorize_user
-    user = User.where(:email=>session[:cas_user]).first
-    if user.blank? || user.groups.where(:name=>'admin').all.blank?
+    if !User.joins(:groups)
+            .where('email'=>session[:cas_user],
+                   'groups.name'=>'admin')
+            .exists?
       render :file => "public/401.html", :status => :unauthorized
     end
+  end
+
+private
+
+  def user_params
+    params.require(:user).permit(:email, :password)
   end
 end
