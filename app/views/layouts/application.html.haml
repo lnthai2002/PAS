@@ -9,7 +9,11 @@
     %meta{:name=>"viewport", :content=>"initial-scale=1, width=device-width"}
 
 %body
-  .content
-    #nav
+  .off-canvas-wrap
+    .inner-wrap
       = render :partial=>'usecases_nav'
-    = yield
+
+      %section.main-section
+        = yield
+
+      %a.exit-off-canvas

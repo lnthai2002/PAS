@@ -1,1 +1,24 @@
-=link_to 'Logout', logout_path, method: :delete
+%nav.tab-bar
+  %section.left-small
+    %a.left-off-canvas-toggle.menu-icon
+      %span
+  %section.middle.tab-bar-section
+    %h1.title User Management
+  %section.right-small
+    %a.right-off-canvas-toggle.menu-icon
+      %span
+
+%aside.left-off-canvas-menu
+  %ul.off-canvas-list
+    %li
+      %label Navigation
+    %li=link_to "Users", users_path
+    %li=link_to "Group", groups_path
+        
+%aside.right-off-canvas-menu
+  %ul.off-canvas-list
+    %li
+      %label Actions
+    %li=link_to "List", users_path
+    %li=link_to "Add", new_user_path
+    %li=link_to 'Logout', logout_path, method: :delete
