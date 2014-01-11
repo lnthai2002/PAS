@@ -1,0 +1,17 @@
+%nav.tab-bar
+  %section.left-small
+    %a.left-off-canvas-toggle.menu-icon
+      %span
+  %section.middle.tab-bar-section
+    %h1.title= content_for?(:nav_title) ? yield(:nav_title) : 'PAS'
+  %section.right-small
+    %a.right-off-canvas-toggle.menu-icon
+      %span
+
+%aside.left-off-canvas-menu
+  %ul.off-canvas-list
+    =render partial: "left_menu_list"
+
+%aside.right-off-canvas-menu
+  %ul.off-canvas-list
+    =render partial: "right_menu_list"
