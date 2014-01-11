@@ -17,7 +17,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
-      redirect_to groups_path
+      redirect_to groups_path, notice: "#{@group.name} added"
     else
       render :new
     end
@@ -29,15 +29,19 @@ class GroupsController < ApplicationController
 
   def update
     if @group.update(group_params)
-      redirect_to group_path(@group)
+      redirect_to group_path(@group), notice: "#{@group.name} updated"
     else
       render :edit
     end
   end
 
   def destroy
-    @group.destroy
-    redirect_to groups_path
+    if !@group.users.exists? && @group.destroy
+      redirect_to groups_path, notice: "#{@group.name} removed!"
+    else
+      redirect_to groups_path, alert: "#{@group.name} cannot be removed!"
+    end
+     
   end
 
 protected
