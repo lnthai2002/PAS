@@ -22,7 +22,7 @@ gem 'tabs_on_rails'                         #allow declaring tab for each contro
 gem 'foundation-rails'                      #foundation UI framework
 
 #Convenent coding
-gem 'haml'                                  #shorter syntax to code layout 
+gem 'haml-rails'                            #shorter syntax to code layout 
 gem 'hash_extension'                        #allow accessing hash like object: has.key in addition to hash[key]
 gem 'carrierwave'                           #easy upload image to server
 gem 'dynamic_form'
