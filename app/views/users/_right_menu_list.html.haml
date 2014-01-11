@@ -1,0 +1,8 @@
+%li
+  %label Actions
+%li=link_to "List", users_path
+%li=link_to "Add", new_user_path
+%li=link_to('Remove', group_path(@user),
+    data: {confirm: "Removing #{@user.email}?"},
+    method: :delete) if (@user && !@user.new_record?)
+%li=link_to 'Logout', logout_path, data: {confirm: "Logout now?"}, method: :delete

@@ -13,10 +13,11 @@
   %body
     .off-canvas-wrap
       .inner-wrap
-        = render :partial=>'usecases_nav'
+        = render :partial=>'navigation'
 
         %section.main-section
-          = yield
+          = render 'messages'
+          = content_for?(:content) ? yield(:content) : yield
 
         %a.exit-off-canvas
     -# Foundation 5 won't work when application.js is included in HEAD
