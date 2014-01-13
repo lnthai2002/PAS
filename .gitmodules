@@ -4,3 +4,6 @@
 [submodule "vendor/engines/financial"]
 	path = vendor/engines/financial
 	url = git@github.com:lnthai2002/financial.git
+[submodule "vendor/engines/music"]
+	path = vendor/engines/music
+	url = git@github.com:lnthai2002/music.git
