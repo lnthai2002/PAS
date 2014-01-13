@@ -7,6 +7,9 @@
 # Ignore bundler config
 /.bundle
 
+#ignore project file
+/.project
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
@@ -20,3 +23,4 @@
 #ignore assets
 /public/assets
 /public/uploads
+/public/cooking
