@@ -7,10 +7,8 @@ Pas::Application.routes.draw do
 
   resources :groups
   resources :users
-  resources :songs
-#  match 'songs/download/:id'=>'songs#download', :id => /[^\/]+/
 
-  root :to => 'songs#index'
+  root :to => 'users#index'
 
   delete 'logout', to: 'sessions#logout'
 end
