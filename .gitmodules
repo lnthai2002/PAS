@@ -7,3 +7,6 @@
 [submodule "vendor/engines/music"]
 	path = vendor/engines/music
 	url = git@github.com:lnthai2002/music.git
+[submodule "vendor/engines/casum"]
+	path = vendor/engines/casum
+	url = git@github.com:lnthai2002/casum.git
