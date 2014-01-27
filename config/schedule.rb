@@ -13,7 +13,7 @@ set :output, "/var/www/PAS/shared/log/cron.log"
 #   rake "some:great:rake:task"
 # end
 #
-every 1.days do
+every 1.days, :at => '11:00 am' do
   runner "Financial::RecurringPayment.post"
 end
 
