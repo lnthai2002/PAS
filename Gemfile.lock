@@ -33,6 +33,21 @@ PATH
       rubycas-client
       whenever
 
+PATH
+  remote: vendor/engines/music
+  specs:
+    music (0.0.1)
+      dynamic_form
+      foundation-rails
+      haml-rails
+      jquery-rails
+      jquery-ui-rails
+      mysql2
+      rails (~> 4.0.1)
+      remotipart
+      ruby-mp3info
+      rubycas-client
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -246,6 +261,7 @@ DEPENDENCIES
   jquery-ui-rails
   mini_magick
   money-rails
+  music!
   mysql2
   rails (= 4.0.1)
   rails_layout

@@ -9,6 +9,7 @@ gem 'cancan'
 #engines
 gem 'cooking', :path => "vendor/engines/cooking"
 gem 'financial', :path => "vendor/engines/financial"
+gem 'music', :path => "vendor/engines/music"
 
 #Javascript lib
 gem 'jquery-rails'
