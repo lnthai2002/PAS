@@ -44,20 +44,7 @@ module Pas
     config.assets.version = '1.0'
     
     #do not use timestamp in migration version
-    config.active_record.timestamped_migrations = false
-
-    #Central Authentication System
-    #config.rubycas.cas_base_url = 'https://darkportal.no-ip.info/cas'
-    #config.rubycas.logger       = Rails.logger
-    #config.rubycas.login_url    = "https://darkportal.no-ip.info/cas/login"
-    #config.rubycas.logout_url   = "https://darkportal.no-ip.info/cas/logout"
-    #config.rubycas.validate_url = "https://darkportal.no-ip.info/cas/proxyValidate"
-    #config.rubycas.username_session_key         = :cas_user
-#    config.rubycas.extra_attributes_session_key = :cas_extra_attributes
-    #config.rubycas.enable_single_sign_out       = true
-
-    #engine that served as UI module
-    config.ui_modules = []
+    #config.active_record.timestamped_migrations = false
 
     #replace fixture with factory
     #config.generators do |g|
