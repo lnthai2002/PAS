@@ -17,7 +17,6 @@ gem 'remotipart'                            #allow submit ajax form with multipa
 
 #Visual
 gem 'will_paginate'                         #pagination
-gem 'calendar_date_select'                  #show calendar to user to select
 gem 'foundation-rails'                      #foundation UI framework
 
 #Convenent coding
