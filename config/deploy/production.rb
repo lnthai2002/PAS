@@ -1,6 +1,8 @@
 
-set :branch,     "production"
+set :branch,    'production'
 set :rails_env, 'production'
+
+set :asset_env, "#{asset_env} RAILS_RELATIVE_URL_ROOT=/pas"   #deploy to sub directory, assets should be prefixed 
 
 #declare production servers
 default_environment["RAILS_ENV"] = 'production'
