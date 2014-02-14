@@ -65,7 +65,6 @@ PATH
       foundation-rails
       haml-rails
       jquery-rails
-      jquery-ui-rails
       mysql2
       rails (~> 4.0.1)
       remotipart
