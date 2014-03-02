@@ -9,6 +9,7 @@ gem 'casum', :path => "vendor/engines/casum"
 gem 'cooking', :path => "vendor/engines/cooking"
 gem 'financial', :path => "vendor/engines/financial"
 gem 'music', :path => "vendor/engines/music"
+gem 'tabs_on_rails', :git=>'git@github.com:lnthai2002/tabs_on_rails.git', :branch=>'darkportal'
 
 #Javascript lib
 gem 'jquery-rails'
