@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem 'bundler'
 gem 'rails', '4.0.1'
 gem 'mysql2'
 gem "rubycas-client", :git=>"https://github.com/rubycas/rubycas-client.git"
