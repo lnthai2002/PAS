@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/rubycas/rubycas-client.git
-  revision: d0e22cb2a098879d0369c8109386cb8338b1dc2e
+  revision: 195a4b70333029be474b0ac70efdc85bd4288861
   specs:
     rubycas-client (2.3.10.rc1)
       activesupport
@@ -18,11 +18,11 @@ PATH
     casum (0.0.1)
       cancan
       dynamic_form
-      foundation-rails
+      foundation-rails (~> 5.0)
       haml-rails
       jquery-rails
       jquery-ui-rails
-      mysql2
+      mysql2 (~> 0.3.18)
       rails (~> 4.0.1)
       remotipart
       rubycas-client
@@ -34,12 +34,12 @@ PATH
     cooking (0.0.1)
       carrierwave
       dynamic_form
-      foundation-rails
+      foundation-rails (~> 5.0)
       haml-rails
       jquery-rails
       jquery-ui-rails
       mini_magick
-      mysql2
+      mysql2 (~> 0.3.18)
       rails (~> 4.0.1)
       remotipart
       tabs_on_rails
@@ -48,14 +48,14 @@ PATH
   remote: vendor/engines/financial
   specs:
     financial (0.0.1)
-      bootstrap-sass
+      bootstrap-sass (~> 3.0)
       cancan
       dynamic_form
       haml-rails
       ice_cube
       jquery-rails
       money-rails
-      mysql2
+      mysql2 (~> 0.3.18)
       rails (~> 4.0.1)
       remotipart
       rubycas-client
@@ -70,10 +70,10 @@ PATH
       activerecord-tableless
       cancan
       dynamic_form
-      foundation-rails
+      foundation-rails (~> 5.0)
       haml-rails
       jquery-rails
-      mysql2
+      mysql2 (~> 0.3.18)
       rails (~> 4.0.1)
       remotipart
       rubycas-client
@@ -82,42 +82,42 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
-    actionmailer (4.0.1)
-      actionpack (= 4.0.1)
-      mail (~> 2.5.4)
-    actionpack (4.0.1)
-      activesupport (= 4.0.1)
+    actionmailer (4.0.13)
+      actionpack (= 4.0.13)
+      mail (~> 2.5, >= 2.5.4)
+    actionpack (4.0.13)
+      activesupport (= 4.0.13)
       builder (~> 3.1.0)
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
-    activemodel (4.0.1)
-      activesupport (= 4.0.1)
+    activemodel (4.0.13)
+      activesupport (= 4.0.13)
       builder (~> 3.1.0)
-    activerecord (4.0.1)
-      activemodel (= 4.0.1)
+    activerecord (4.0.13)
+      activemodel (= 4.0.13)
       activerecord-deprecated_finders (~> 1.0.2)
-      activesupport (= 4.0.1)
+      activesupport (= 4.0.13)
       arel (~> 4.0.0)
-    activerecord-deprecated_finders (1.0.3)
-    activerecord-tableless (1.3.3)
+    activerecord-deprecated_finders (1.0.4)
+    activerecord-tableless (1.3.4)
       activerecord (>= 2.3.0)
-    activesupport (4.0.1)
-      i18n (~> 0.6, >= 0.6.4)
+    activesupport (4.0.13)
+      i18n (~> 0.6, >= 0.6.9)
       minitest (~> 4.2)
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
-    arel (4.0.1)
-    atomic (1.1.14)
-    bootstrap-sass (3.3.1.0)
-      sass (~> 3.2)
+    arel (4.0.2)
+    autoprefixer-rails (6.3.6)
+      execjs
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.1.4)
-    byebug (2.3.1)
-      columnize (~> 0.3.6)
-      debugger-linecache (~> 1.2.0)
+    byebug (9.0.2)
     cancan (1.6.10)
-    capistrano (2.15.5)
+    capistrano (2.15.7)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
@@ -125,135 +125,151 @@ GEM
       net-ssh-gateway (>= 1.1.0)
     capistrano-ext (1.2.1)
       capistrano (>= 1.0.0)
-    carrierwave (0.9.0)
+    carrierwave (0.11.2)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
+      mime-types (>= 1.16)
+      mimemagic (>= 0.3.0)
     chronic (0.10.2)
-    coffee-rails (4.0.1)
+    coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.0)
-    coffee-script (2.2.0)
+      railties (>= 4.0.0, < 5.1.x)
+    coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.3)
-    columnize (0.3.6)
-    debugger-linecache (1.2.0)
+    coffee-script-source (1.10.0)
+    concurrent-ruby (1.0.2)
     diff-lcs (1.2.5)
     dynamic_form (1.1.4)
     erubis (2.7.0)
-    execjs (2.0.2)
-    factory_girl (4.3.0)
+    execjs (2.6.0)
+    factory_girl (4.7.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.3.0)
-      factory_girl (~> 4.3.0)
+    factory_girl_rails (4.7.0)
+      factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
-    foundation-rails (5.0.2.0)
+    foundation-rails (5.5.3.2)
       railties (>= 3.1.0)
-      sass (>= 3.2.0)
-    haml (4.0.5)
+      sass (>= 3.3.0, < 3.5)
+    haml (4.0.7)
       tilt
-    haml-rails (0.5.3)
+    haml-rails (0.9.0)
       actionpack (>= 4.0.1)
       activesupport (>= 4.0.1)
-      haml (>= 3.1, < 5.0)
+      haml (>= 4.0.6, < 5.0)
+      html2haml (>= 1.0.1)
       railties (>= 4.0.1)
-    highline (1.6.20)
-    hike (1.2.3)
-    i18n (0.6.9)
-    ice_cube (0.11.1)
-    jquery-rails (3.0.4)
+    highline (1.7.8)
+    html2haml (2.0.0)
+      erubis (~> 2.7.0)
+      haml (~> 4.0.0)
+      nokogiri (~> 1.6.0)
+      ruby_parser (~> 3.5)
+    i18n (0.7.0)
+    ice_cube (0.14.0)
+    jquery-rails (3.1.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (4.1.0)
-      railties (>= 3.1.0)
-    json (1.8.1)
-    mail (2.5.4)
-      mime-types (~> 1.16)
-      treetop (~> 1.4.8)
-    mime-types (1.25.1)
-    mini_magick (3.7.0)
-      subexec (~> 0.2.1)
+    jquery-ui-rails (5.0.5)
+      railties (>= 3.2.16)
+    json (1.8.3)
+    mail (2.6.4)
+      mime-types (>= 1.16, < 4)
+    mime-types (3.0)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0221)
+    mimemagic (0.3.1)
+    mini_magick (4.5.1)
+    mini_portile2 (2.0.0)
     minitest (4.7.5)
-    money (5.1.1)
-      i18n (~> 0.6.0)
-    money-rails (0.8.1)
+    monetize (1.4.0)
+      money (~> 6.7)
+    money (6.7.1)
+      i18n (>= 0.6.4, <= 0.7.0)
+      sixarm_ruby_unaccent (>= 1.1.1, < 2)
+    money-rails (1.6.1)
       activesupport (>= 3.0)
-      money (~> 5.1.0)
+      monetize (~> 1.4.0)
+      money (~> 6.7)
       railties (>= 3.0)
-    multi_json (1.8.2)
-    mysql2 (0.3.14)
-    net-scp (1.1.2)
+    multi_json (1.12.0)
+    mysql2 (0.3.21)
+    net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
-    net-ssh (2.7.0)
+    net-ssh (3.1.1)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
-    polyglot (0.3.3)
-    rack (1.5.2)
-    rack-test (0.6.2)
+    nokogiri (1.6.7.2)
+      mini_portile2 (~> 2.0.0.rc2)
+    rack (1.5.5)
+    rack-test (0.6.3)
       rack (>= 1.0)
-    rails (4.0.1)
-      actionmailer (= 4.0.1)
-      actionpack (= 4.0.1)
-      activerecord (= 4.0.1)
-      activesupport (= 4.0.1)
+    rails (4.0.13)
+      actionmailer (= 4.0.13)
+      actionpack (= 4.0.13)
+      activerecord (= 4.0.13)
+      activesupport (= 4.0.13)
       bundler (>= 1.3.0, < 2.0)
-      railties (= 4.0.1)
-      sprockets-rails (~> 2.0.0)
-    rails_layout (1.0.1)
-    railties (4.0.1)
-      actionpack (= 4.0.1)
-      activesupport (= 4.0.1)
+      railties (= 4.0.13)
+      sprockets-rails (~> 2.0)
+    rails_layout (1.0.29)
+    railties (4.0.13)
+      actionpack (= 4.0.13)
+      activesupport (= 4.0.13)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (10.1.1)
+    rake (11.1.2)
     remotipart (1.2.1)
-    rspec-core (2.14.7)
-    rspec-expectations (2.14.4)
-      diff-lcs (>= 1.1.3, < 2.0)
-    rspec-mocks (2.14.4)
-    rspec-rails (2.14.0)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec-core (~> 2.14.0)
-      rspec-expectations (~> 2.14.0)
-      rspec-mocks (~> 2.14.0)
-    rvm-capistrano (1.5.1)
+    rspec-core (3.4.4)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-rails (3.4.2)
+      actionpack (>= 3.0, < 4.3)
+      activesupport (>= 3.0, < 4.3)
+      railties (>= 3.0, < 4.3)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
+    ruby_parser (3.8.2)
+      sexp_processor (~> 4.1)
+    rvm-capistrano (1.5.6)
       capistrano (~> 2.15.4)
-    sass (3.2.14)
-    sass-rails (4.0.1)
+    sass (3.4.22)
+    sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
-      sass (>= 3.1.10)
-      sprockets-rails (~> 2.0.0)
-    sprockets (2.10.1)
-      hike (~> 1.2)
-      multi_json (~> 1.0)
-      rack (~> 1.0)
-      tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.0.1)
+      sass (~> 3.1)
+      sprockets (>= 2.8, < 4.0)
+      sprockets-rails (>= 2.0, < 4.0)
+      tilt (>= 1.1, < 3)
+    sexp_processor (4.7.0)
+    sixarm_ruby_unaccent (1.1.1)
+    sprockets (3.6.0)
+      concurrent-ruby (~> 1.0)
+      rack (> 1, < 3)
+    sprockets-rails (2.3.3)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
-      sprockets (~> 2.8)
-    subexec (0.2.3)
-    taglib-ruby (0.6.0)
-    thor (0.18.1)
-    thread_safe (0.1.3)
-      atomic
-    tilt (1.4.1)
-    treetop (1.4.15)
-      polyglot
-      polyglot (>= 0.3.1)
-    tzinfo (0.3.38)
-    uglifier (2.3.2)
-      execjs (>= 0.3.0)
-      json (>= 1.8.0)
-    whenever (0.8.4)
-      activesupport (>= 2.3.4)
+      sprockets (>= 2.8, < 4.0)
+    taglib-ruby (0.7.1)
+    thor (0.19.1)
+    thread_safe (0.3.5)
+    tilt (2.0.3)
+    tzinfo (0.3.49)
+    uglifier (3.0.0)
+      execjs (>= 0.3.0, < 3)
+    whenever (0.9.4)
       chronic (>= 0.6.3)
-    will_paginate (3.0.5)
+    will_paginate (3.1.0)
 
 PLATFORMS
   ruby
@@ -271,7 +287,7 @@ DEPENDENCIES
   execjs
   factory_girl_rails
   financial!
-  foundation-rails
+  foundation-rails (~> 5.0)
   haml-rails
   ice_cube
   jquery-rails
@@ -279,8 +295,8 @@ DEPENDENCIES
   mini_magick
   money-rails
   music!
-  mysql2
-  rails (= 4.0.1)
+  mysql2 (~> 0.3.18)
+  rails (~> 4.0.1)
   rails_layout
   remotipart
   rspec-rails
@@ -293,4 +309,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.11.2
+   1.12.3

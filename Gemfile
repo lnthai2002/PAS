@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'bundler'
-gem 'rails', '4.0.1'
-gem 'mysql2'
+gem 'rails', "~> 4.0.1"
+gem 'mysql2', '~> 0.3.18'
 gem "rubycas-client", :git=>"https://github.com/rubycas/rubycas-client.git"
 
 #engines
@@ -19,7 +19,7 @@ gem 'remotipart'                            #allow submit ajax form with multipa
 
 #Visual
 gem 'will_paginate'                         #pagination
-gem 'foundation-rails'                      #foundation UI framework
+gem 'foundation-rails', '~> 5.0'            #foundation UI framework
 
 #Convenent coding
 gem 'haml-rails'                            #shorter syntax to code layout 
