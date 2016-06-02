@@ -48,6 +48,7 @@ PATH
   remote: vendor/engines/financial
   specs:
     financial (0.0.1)
+      bootstrap-multiselect-rails
       bootstrap-sass (~> 3.0)
       cancan
       dynamic_form
@@ -109,8 +110,10 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     arel (4.0.2)
-    autoprefixer-rails (6.3.6)
+    autoprefixer-rails (6.3.6.2)
       execjs
+    bootstrap-multiselect-rails (0.9.9)
+      rails (>= 4.0.0)
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -309,4 +312,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.12.3
+   1.12.5
